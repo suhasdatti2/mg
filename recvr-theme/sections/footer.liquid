@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__logo">{{ section.settings.logo_text }}</div>
+        <p class="footer__tagline">{{ section.settings.tagline }}</p>
+      </div>
+      <div class="footer__col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#product">RECVR™ Pro</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#product">Attachments</a></li>
+          <li><a href="#product">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© {{ 'now' | date: '%Y' }} {{ section.settings.logo_text }}. All rights reserved.</span>
+      <span>{{ section.settings.tagline }}</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "logo_text", "label": "Logo text", "default": "RECVR™" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Recovery that moves with you." }
+  ]
+}
+{% endschema %}

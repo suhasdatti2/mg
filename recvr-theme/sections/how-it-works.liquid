@@ -1,0 +1,48 @@
+<section class="section how" id="how-it-works">
+  <div class="wrap">
+    <div class="how__head reveal">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+    </div>
+    <div class="how__steps">
+      {% for block in section.blocks %}
+        <div class="how__step reveal" {{ block.shopify_attributes }}>
+          <div class="how__step-num">{{ block.settings.number }}</div>
+          <h3 class="how__step-title">{{ block.settings.title }}</h3>
+          <p class="how__step-desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How it works" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Relief in three simple steps." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How it works",
+      "blocks": [
+        { "type": "step", "settings": { "number": "01", "title": "Choose intensity", "description": "Power on and select from 99 speed levels. Start gentle and build up to a deep, percussive massage." } },
+        { "type": "step", "settings": { "number": "02", "title": "Target the area", "description": "Snap on the right attachment head and glide over sore muscles — neck, back, shoulders, legs, anywhere." } },
+        { "type": "step", "settings": { "number": "03", "title": "15 minutes, done", "description": "Just a few minutes a day loosens knots, boosts circulation, and leaves you feeling refreshed." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

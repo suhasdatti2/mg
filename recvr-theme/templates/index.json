@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "Flash Sale — 44% OFF Today Only | Free US Shipping |",
+        "link_text": "Shop Now →",
+        "link": "#product"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "RECVR™",
+        "cta_text": "Buy Now — $49.99"
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "ticker": {
+      "type": "ticker",
+      "blocks": {
+        "b1": { "type": "item", "settings": { "text": "“My back pain is gone.” — Jordan M." } },
+        "b2": { "type": "item", "settings": { "text": "45dB Near-Silent Motor" } },
+        "b3": { "type": "item", "settings": { "text": "“Worth every penny.” — Priya R." } },
+        "b4": { "type": "item", "settings": { "text": "99 Speed Levels" } },
+        "b5": { "type": "item", "settings": { "text": "“Better than my $400 gun.” — Chris T." } },
+        "b6": { "type": "item", "settings": { "text": "7-Hour Battery · USB-C" } },
+        "b7": { "type": "item", "settings": { "text": "“I use it every single day.” — Dana K." } },
+        "b8": { "type": "item", "settings": { "text": "6 Attachment Heads" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8"]
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "stat": "99", "title": "Speed Levels", "description": "Dial in the exact intensity for warm-up, deep tissue, or gentle recovery — 99 precise steps." } },
+        "f2": { "type": "feature", "settings": { "stat": "45dB", "title": "Near-Silent Motor", "description": "A high-torque brushless motor quiet enough to use on a call, on the couch, or at the office." } },
+        "f3": { "type": "feature", "settings": { "stat": "6", "title": "Attachment Heads", "description": "Six interchangeable heads target everything from large muscle groups to knots and joints." } },
+        "f4": { "type": "feature", "settings": { "stat": "7hr", "title": "Battery Life", "description": "Up to seven hours per charge. Top up anywhere with universal USB-C charging." } },
+        "f5": { "type": "feature", "settings": { "stat": "1.2lb", "title": "Featherweight", "description": "Ergonomic and travel-ready at just 1.2 pounds — recovery that moves with you." } },
+        "f6": { "type": "feature", "settings": { "stat": "12mm", "title": "Amplitude", "description": "A deep 12mm stroke reaches below the surface to release tension at the source." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
+    },
+    "product": {
+      "type": "product",
+      "blocks": {
+        "a1": { "type": "accordion", "settings": { "title": "What's in the box", "content": "RECVR™ Pro device, 6 attachment heads, USB-C charging cable, premium travel case, and a quick-start guide." } },
+        "a2": { "type": "accordion", "settings": { "title": "Shipping time", "content": "Orders ship within 24 hours from our US warehouse. Free standard shipping arrives in 2–5 business days." } },
+        "a3": { "type": "accordion", "settings": { "title": "How quiet is it", "content": "The brushless motor runs at around 45dB — about as loud as a quiet library. Use it anywhere without disturbing anyone." } },
+        "a4": { "type": "accordion", "settings": { "title": "Return policy", "content": "Not feeling it? Return within 30 days for a full refund, no questions asked. Every order is backed by a 1-year warranty." } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"]
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "number": "01", "title": "Choose intensity", "description": "Power on and select from 99 speed levels. Start gentle and build up to a deep, percussive massage." } },
+        "s2": { "type": "step", "settings": { "number": "02", "title": "Target the area", "description": "Snap on the right attachment head and glide over sore muscles — neck, back, shoulders, legs, anywhere." } },
+        "s3": { "type": "step", "settings": { "number": "03", "title": "15 minutes, done", "description": "Just a few minutes a day loosens knots, boosts circulation, and leaves you feeling refreshed." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "text": "I sit at a desk all day and my neck was always killing me. Ten minutes with this and the tension just melts. Can't believe the price.", "name": "Marcus L.", "city": "Austin, TX" } },
+        "r2": { "type": "review", "settings": { "text": "As a nurse I'm on my feet for 12-hour shifts. This is the only thing that gets my lower back through the week.", "name": "Renee P.", "city": "Chicago, IL" } },
+        "r3": { "type": "review", "settings": { "text": "Genuinely quieter than my old Theragun and honestly hits just as hard. Bought one for my dad too.", "name": "Devin S.", "city": "Portland, OR" } },
+        "r4": { "type": "review", "settings": { "text": "Post-leg-day recovery has never been easier. The battery lasts forever and it's light enough to throw in my gym bag.", "name": "Aaliyah J.", "city": "Atlanta, GA" } },
+        "r5": { "type": "review", "settings": { "text": "Bought it as a gift and ended up ordering a second one for myself. Feels premium, works incredibly well.", "name": "Tom B.", "city": "Denver, CO" } },
+        "r6": { "type": "review", "settings": { "text": "The 99 speed levels actually matter — I keep it low for my neck and crank it for my calves. Best $50 I've spent.", "name": "Sofia M.", "city": "Miami, FL" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"]
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "Is it really only $49.99?", "answer": "Yes — for the duration of our flash sale. The RECVR™ Pro normally retails at $89.99. That's 44% off, today only." } },
+        "q2": { "type": "faq", "settings": { "question": "Will it help with my back and neck pain?", "answer": "Percussion therapy increases blood flow and releases muscle tension, which many desk workers find relieves chronic back and neck tightness. It is a wellness device, not a medical treatment." } },
+        "q3": { "type": "faq", "settings": { "question": "How long does the battery last?", "answer": "Up to 7 hours on a single charge, depending on intensity. It recharges via standard USB-C in about 90 minutes." } },
+        "q4": { "type": "faq", "settings": { "question": "Is it loud?", "answer": "No. The brushless motor runs at roughly 45dB — quiet enough to use while watching TV or on a video call." } },
+        "q5": { "type": "faq", "settings": { "question": "Which attachment head should I use?", "answer": "The ball head is great for large muscle groups, the bullet for pinpoint knots, the fork for the spine and neck, and the flat head for overall use. All six are included." } },
+        "q6": { "type": "faq", "settings": { "question": "What if I don't like it?", "answer": "You're covered by our 30-day money-back guarantee and a full 1-year warranty. If it's not for you, send it back for a refund." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+    },
+    "final-cta": {
+      "type": "final-cta",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "logo_text": "RECVR™",
+        "tagline": "Recovery that moves with you."
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "hero",
+    "ticker",
+    "trust-bar",
+    "features",
+    "product",
+    "how-it-works",
+    "reviews",
+    "faq",
+    "final-cta",
+    "footer"
+  ]
+}

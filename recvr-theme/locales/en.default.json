@@ -1,0 +1,29 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "menu": "Menu",
+      "close": "Close"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "buy_now": "Buy Now",
+      "added": "Added!",
+      "sold_out": "Sold out",
+      "on_sale": "Sale",
+      "regular_price": "Regular price",
+      "sale_price": "Sale price"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Announcement"
+    }
+  }
+}

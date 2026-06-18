@@ -1,0 +1,23 @@
+<section class="section final">
+  <div class="wrap final__inner reveal">
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="final__title">{{ section.settings.headline }} <span class="accent">{{ section.settings.headline_accent }}</span></h2>
+    <p class="final__sub">{{ section.settings.subtext }}</p>
+    <a href="#product" class="btn btn--lime btn--lg">{{ section.settings.cta }}</a>
+    <p class="final__urgency">{{ section.settings.urgency }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Recovery that moves with you" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Your muscles deserve" },
+    { "type": "text", "id": "headline_accent", "label": "Headline accent", "default": "better." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Join 2,847 people who recover smarter every day. Pro-grade percussion therapy, now at 44% off." },
+    { "type": "text", "id": "cta", "label": "CTA", "default": "Get the RECVR™ Pro — $49.99" },
+    { "type": "text", "id": "urgency", "label": "Urgency line", "default": "⚡ Flash sale ends tonight · Free US shipping · Ships in 24hrs" }
+  ]
+}
+{% endschema %}

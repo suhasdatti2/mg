@@ -1,0 +1,59 @@
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__head reveal">
+      <div>
+        <p class="eyebrow eyebrow--accent">{{ section.settings.eyebrow }}</p>
+        <h2>{{ section.settings.headline }}</h2>
+      </div>
+      <div class="reviews__score">
+        <div class="reviews__score-num">4.9</div>
+        <div class="reviews__score-stars">★★★★★</div>
+        <div class="reviews__score-count">Based on 2,847 reviews</div>
+      </div>
+    </div>
+    <div class="reviews__grid">
+      {% for block in section.blocks %}
+        <article class="review-card reveal" {{ block.shopify_attributes }}>
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">“{{ block.settings.text }}”</p>
+          <div class="review-card__name">{{ block.settings.name }}</div>
+          <div class="review-card__meta">{{ block.settings.city }} · <span class="review-card__verified">✓ Verified</span></div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Loved by 2,847 people" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Real results, real reviews." }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Review" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "city", "label": "City" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "text": "I sit at a desk all day and my neck was always killing me. Ten minutes with this and the tension just melts. Can't believe the price.", "name": "Marcus L.", "city": "Austin, TX" } },
+        { "type": "review", "settings": { "text": "As a nurse I'm on my feet for 12-hour shifts. This is the only thing that gets my lower back through the week.", "name": "Renee P.", "city": "Chicago, IL" } },
+        { "type": "review", "settings": { "text": "Genuinely quieter than my old Theragun and honestly hits just as hard. Bought one for my dad too.", "name": "Devin S.", "city": "Portland, OR" } },
+        { "type": "review", "settings": { "text": "Post-leg-day recovery has never been easier. The battery lasts forever and it's light enough to throw in my gym bag.", "name": "Aaliyah J.", "city": "Atlanta, GA" } },
+        { "type": "review", "settings": { "text": "Bought it as a gift and ended up ordering a second one for myself. Feels premium, works incredibly well.", "name": "Tom B.", "city": "Denver, CO" } },
+        { "type": "review", "settings": { "text": "The 99 speed levels actually matter — I keep it low for my neck and crank it for my calves. Best $50 I've spent.", "name": "Sofia M.", "city": "Miami, FL" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

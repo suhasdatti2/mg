@@ -1,0 +1,51 @@
+<section class="section features" id="features">
+  <div class="wrap">
+    <div class="features__head reveal">
+      <p class="eyebrow eyebrow--accent">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+    </div>
+    <div class="features__grid">
+      {% for block in section.blocks %}
+        <article class="feature-card reveal" {{ block.shopify_attributes }}>
+          <div class="feature-card__stat">{{ block.settings.stat }}</div>
+          <h3 class="feature-card__title">{{ block.settings.title }}</h3>
+          <p class="feature-card__desc">{{ block.settings.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Features",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Engineered to perform" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Pro specs. Pocket-friendly price." }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "text", "id": "stat", "label": "Stat" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features",
+      "blocks": [
+        { "type": "feature", "settings": { "stat": "99", "title": "Speed Levels", "description": "Dial in the exact intensity for warm-up, deep tissue, or gentle recovery — 99 precise steps." } },
+        { "type": "feature", "settings": { "stat": "45dB", "title": "Near-Silent Motor", "description": "A high-torque brushless motor quiet enough to use on a call, on the couch, or at the office." } },
+        { "type": "feature", "settings": { "stat": "6", "title": "Attachment Heads", "description": "Six interchangeable heads target everything from large muscle groups to knots and joints." } },
+        { "type": "feature", "settings": { "stat": "7hr", "title": "Battery Life", "description": "Up to seven hours per charge. Top up anywhere with universal USB-C charging." } },
+        { "type": "feature", "settings": { "stat": "1.2lb", "title": "Featherweight", "description": "Ergonomic and travel-ready at just 1.2 pounds — recovery that moves with you." } },
+        { "type": "feature", "settings": { "stat": "12mm", "title": "Amplitude", "description": "A deep 12mm stroke reaches below the surface to release tension at the source." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

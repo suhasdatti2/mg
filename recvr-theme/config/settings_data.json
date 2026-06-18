@@ -1,0 +1,16 @@
+{
+  "current": {
+    "color_primary": "#0A0A0A",
+    "color_accent": "#E8FF00",
+    "color_bg": "#F7F7F5",
+    "color_text": "#1A1A1A"
+  },
+  "presets": {
+    "RECVR": {
+      "color_primary": "#0A0A0A",
+      "color_accent": "#E8FF00",
+      "color_bg": "#F7F7F5",
+      "color_text": "#1A1A1A"
+    }
+  }
+}

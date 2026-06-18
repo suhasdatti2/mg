@@ -1,0 +1,116 @@
+<section class="section product" id="product">
+  <div class="wrap product__grid">
+    <!-- Media -->
+    <div class="product__media reveal">
+      {% render 'placeholder-image', src: section.settings.image_1 | image_url: width: 1200, alt: 'RECVR Pro', class: 'product__main-img', attrs: 'data-main-image' %}
+      <div class="product__thumbs">
+        <div class="product__thumb is-active" data-thumb="{{ section.settings.image_1 | image_url: width: 1200 }}">
+          {% render 'placeholder-image', src: section.settings.image_1 | image_url: width: 600, alt: 'View 1' %}
+        </div>
+        <div class="product__thumb" data-thumb="{{ section.settings.image_2 | image_url: width: 1200 }}">
+          {% render 'placeholder-image', src: section.settings.image_2 | image_url: width: 600, alt: 'View 2', light: true %}
+        </div>
+        <div class="product__thumb" data-thumb="{{ section.settings.image_3 | image_url: width: 1200 }}">
+          {% render 'placeholder-image', src: section.settings.image_3 | image_url: width: 600, alt: 'View 3' %}
+        </div>
+        <div class="product__thumb" data-thumb="{{ section.settings.image_4 | image_url: width: 1200 }}">
+          {% render 'placeholder-image', src: section.settings.image_4 | image_url: width: 600, alt: 'View 4', light: true %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="product__details reveal">
+      <p class="product__label">RECVR™</p>
+      <h1 class="product__title">RECVR™ Pro Percussion Massage Gun</h1>
+
+      <div class="product__rating">
+        <span class="product__stars">★★★★★</span>
+        <span class="product__rating-count">4.9 · 2,847 reviews</span>
+      </div>
+
+      <div class="product__price">
+        <span class="product__price-now">$49.99</span>
+        <span class="product__price-was">$89.99</span>
+        <span class="product__save">SAVE 44%</span>
+      </div>
+
+      <div>
+        <p class="product__label" style="margin-bottom:10px">Color — <span data-swatch-label>Stealth Grey</span></p>
+        <div class="product__swatches" data-swatches role="radiogroup" aria-label="Color">
+          <button class="swatch is-active" data-swatch="Stealth Grey" style="background:#4A4E54" aria-checked="true" aria-label="Stealth Grey"></button>
+          <button class="swatch" data-swatch="Matte Silver" style="background:#C7CACE" aria-checked="false" aria-label="Matte Silver"></button>
+          <button class="swatch" data-swatch="Midnight Blue" style="background:#1B2A4A" aria-checked="false" aria-label="Midnight Blue"></button>
+          <button class="swatch" data-swatch="All Black" style="background:#0A0A0A" aria-checked="false" aria-label="All Black"></button>
+        </div>
+      </div>
+
+      <div class="product__buttons">
+        <button class="btn btn--dark btn--block btn--lg" data-add-to-cart>Add to Cart</button>
+        <a href="/checkout" class="btn btn--lime btn--block btn--lg">Buy Now — $49.99</a>
+      </div>
+
+      <div class="product__trust">
+        <span class="product__trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Free Shipping
+        </span>
+        <span class="product__trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+          30-Day Returns
+        </span>
+        <span class="product__trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/></svg>
+          1-Year Warranty
+        </span>
+      </div>
+
+      <div class="accordion" data-accordion>
+        {% for block in section.blocks %}
+          <div class="accordion__item" data-accordion-item {{ block.shopify_attributes }}>
+            <button class="accordion__trigger" data-accordion-trigger aria-expanded="false">
+              {{ block.settings.title }}
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" data-accordion-panel>
+              <div class="accordion__panel-inner">{{ block.settings.content }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [
+    { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+    { "type": "image_picker", "id": "image_2", "label": "Image 2" },
+    { "type": "image_picker", "id": "image_3", "label": "Image 3" },
+    { "type": "image_picker", "id": "image_4", "label": "Image 4" }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "content", "label": "Content" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product",
+      "blocks": [
+        { "type": "accordion", "settings": { "title": "What's in the box", "content": "RECVR™ Pro device, 6 attachment heads, USB-C charging cable, premium travel case, and a quick-start guide." } },
+        { "type": "accordion", "settings": { "title": "Shipping time", "content": "Orders ship within 24 hours from our US warehouse. Free standard shipping arrives in 2–5 business days." } },
+        { "type": "accordion", "settings": { "title": "How quiet is it", "content": "The brushless motor runs at around 45dB — about as loud as a quiet library. Use it anywhere without disturbing anyone." } },
+        { "type": "accordion", "settings": { "title": "Return policy", "content": "Not feeling it? Return within 30 days for a full refund, no questions asked. Every order is backed by a 1-year warranty." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

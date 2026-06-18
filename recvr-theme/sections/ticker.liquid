@@ -1,0 +1,41 @@
+<section class="ticker" aria-label="Highlights">
+  <div class="ticker__track">
+    {%- comment -%} Content rendered twice for a seamless infinite loop {%- endcomment -%}
+    {% for i in (1..2) %}
+      {% for block in section.blocks %}
+        <span class="ticker__item">{{ block.settings.text }}</span>
+        <span class="ticker__dot" aria-hidden="true"></span>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ticker",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker",
+      "blocks": [
+        { "type": "item", "settings": { "text": "“My back pain is gone.” — Jordan M." } },
+        { "type": "item", "settings": { "text": "45dB Near-Silent Motor" } },
+        { "type": "item", "settings": { "text": "“Worth every penny.” — Priya R." } },
+        { "type": "item", "settings": { "text": "99 Speed Levels" } },
+        { "type": "item", "settings": { "text": "“Better than my $400 gun.” — Chris T." } },
+        { "type": "item", "settings": { "text": "7-Hour Battery · USB-C" } },
+        { "type": "item", "settings": { "text": "“I use it every single day.” — Dana K." } },
+        { "type": "item", "settings": { "text": "6 Attachment Heads" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

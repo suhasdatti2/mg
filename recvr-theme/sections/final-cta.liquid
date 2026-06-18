@@ -1,4 +1,10 @@
 <section class="section final">
+  {%- if section.settings.paths_bg -%}
+    <div class="final__paths" aria-hidden="true">
+      {% render 'floating-paths', position: 1 %}
+      {% render 'floating-paths', position: -1 %}
+    </div>
+  {%- endif -%}
   <div class="wrap final__inner reveal">
     <p class="eyebrow">{{ section.settings.eyebrow }}</p>
     <h2 class="final__title">{{ section.settings.headline }} <span class="accent">{{ section.settings.headline_accent }}</span></h2>
@@ -17,7 +23,8 @@
     { "type": "text", "id": "headline_accent", "label": "Headline accent", "default": "better." },
     { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Join 2,847 people who recover smarter every day. Pro-grade percussion therapy, now at 44% off." },
     { "type": "text", "id": "cta", "label": "CTA", "default": "Get the RECVR™ Pro — $49.99" },
-    { "type": "text", "id": "urgency", "label": "Urgency line", "default": "⚡ Flash sale ends tonight · Free US shipping · Ships in 24hrs" }
+    { "type": "text", "id": "urgency", "label": "Urgency line", "default": "⚡ Flash sale ends tonight · Free US shipping · Ships in 24hrs" },
+    { "type": "checkbox", "id": "paths_bg", "label": "Animated floating paths background", "default": true }
   ]
 }
 {% endschema %}

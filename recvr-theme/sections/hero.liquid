@@ -1,8 +1,14 @@
 <section class="hero">
+  {%- comment -%} "Silent Precision" PixelHero canvas — ported to vanilla JS {%- endcomment -%}
+  {%- if section.settings.pixel_bg -%}
+    <div class="hero__pixels" aria-hidden="true">
+      <canvas data-pixel-canvas data-gap="6" data-speed="35" data-colors="rgba(255,255,255,0.10),rgba(255,255,255,0.10),rgba(255,255,255,0.16),rgba(255,255,255,0.08),{{ settings.color_accent | default: '#E8FF00' }}"></canvas>
+    </div>
+  {%- endif -%}
   <div class="wrap hero__grid">
     <div class="hero__content reveal">
       <p class="eyebrow hero__eyebrow">{{ section.settings.eyebrow }}</p>
-      <h1 class="hero__title">{{ section.settings.headline }} <span class="accent">{{ section.settings.headline_accent }}</span></h1>
+      <h1 class="hero__title"><span class="hero__shimmer">{{ section.settings.headline }}</span> <span class="accent">{{ section.settings.headline_accent }}</span></h1>
       <p class="hero__sub">{{ section.settings.subheadline }}</p>
       <div class="hero__ctas">
         <a href="#product" class="btn btn--lime btn--lg">{{ section.settings.cta_primary }}</a>
@@ -41,7 +47,8 @@
     { "type": "textarea", "id": "subheadline", "label": "Subheadline", "default": "Pro-grade percussion therapy in a near-silent, 1.2lb device. Loosen tight muscles, ease tension, and recover faster — wherever you are." },
     { "type": "text", "id": "cta_primary", "label": "Primary CTA", "default": "Buy Now — $49.99" },
     { "type": "text", "id": "cta_secondary", "label": "Secondary CTA", "default": "See how it works →" },
-    { "type": "image_picker", "id": "image", "label": "Product image" }
+    { "type": "image_picker", "id": "image", "label": "Product image" },
+    { "type": "checkbox", "id": "pixel_bg", "label": "Animated pixel background (Silent Precision)", "default": true }
   ]
 }
 {% endschema %}

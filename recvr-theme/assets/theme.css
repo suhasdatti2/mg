@@ -298,6 +298,39 @@ h1, h2, h3, h4 {
   align-items: center;
   width: 100%;
   padding: 64px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* "Silent Precision" animated pixel canvas background */
+.hero__pixels {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 78%);
+}
+.hero__pixels canvas { width: 100%; height: 100%; display: block; }
+
+/* Shimmer treatment on the headline (Tahoe-glass text from PixelHero) */
+.hero__shimmer {
+  background: linear-gradient(110deg,
+    rgba(255,255,255,1) 0%, rgba(255,255,255,0.45) 30%,
+    rgba(255,255,255,1) 50%, rgba(255,255,255,0.45) 70%,
+    rgba(255,255,255,1) 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-shimmer 7s linear infinite;
+}
+@keyframes hero-shimmer {
+  to { background-position: -220% center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__shimmer { animation: none; }
 }
 .hero__eyebrow { color: var(--color-accent); }
 .hero__title {
@@ -635,8 +668,28 @@ h1, h2, h3, h4 {
 /* ==========================================================================
    11. Final CTA
    ========================================================================== */
-.final { background: var(--color-primary); color: var(--color-white); text-align: center; }
-.final__inner { max-width: 760px; margin: 0 auto; }
+.final { background: var(--color-primary); color: var(--color-white); text-align: center; position: relative; overflow: hidden; }
+.final__paths {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  color: var(--color-accent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.final__paths .fpaths { position: absolute; inset: 0; width: 100%; height: 100%; }
+.final__paths .fpaths path {
+  stroke-dasharray: 6 14;
+  animation: fp-flow var(--fp-dur, 20s) linear infinite;
+  animation-delay: var(--fp-delay, 0s);
+}
+@keyframes fp-flow {
+  to { stroke-dashoffset: -200; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .final__paths .fpaths path { animation: none; }
+}
+.final__inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
 .final .eyebrow { color: var(--color-accent); }
 .final__title { font-size: clamp(48px, 7vw, 90px); color: var(--color-white); margin-bottom: 24px; }
 .final__sub { font-size: 18px; color: rgba(255, 255, 255, 0.7); margin: 0 auto 38px; max-width: 520px; }

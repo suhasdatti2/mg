@@ -17,7 +17,9 @@
     },
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "image_file": "product-1.jpg"
+      }
     },
     "ticker": {
       "type": "ticker",
@@ -52,6 +54,10 @@
     "product": {
       "type": "product",
       "settings": {
+        "file_1": "product-1.jpg",
+        "file_2": "product-2.jpg",
+        "file_3": "product-3.jpg",
+        "file_4": "product-4.jpg",
         "cap_1": "45dB near-silent brushless motor",
         "cap_2": "Tool-free magnetic attachments",
         "cap_3": "12mm deep-tissue amplitude",

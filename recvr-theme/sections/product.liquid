@@ -3,32 +3,31 @@
     <!-- Media gallery -->
     <div class="product__media reveal">
       <div class="product__main">
-        {%- if section.settings.image_1 != blank -%}
-          <img class="product__main-img2" id="ProdMain" src="{{ section.settings.image_1 | image_url: width: 1200 }}" alt="RECVR Pro massage gun">
-        {%- else -%}
-          <div class="product__main-img2 product__empty" id="ProdMain">
-            <span>Upload 4 product photos in<br>Theme editor → Product → Image 1–4</span>
-          </div>
-        {%- endif -%}
+        {% render 'product-photo',
+          image: section.settings.image_1,
+          file: section.settings.file_1,
+          id: 'ProdMain',
+          class: 'product__main-img2',
+          alt: 'RECVR Pro massage gun',
+          loading: 'eager' %}
         {%- if section.settings.cap_1 != blank -%}
           <span class="product__caption" id="ProdCaption">{{ section.settings.cap_1 }}</span>
         {%- endif -%}
       </div>
       <div class="product__thumbs">
         {%- assign caps = section.settings.cap_1 | append: '|' | append: section.settings.cap_2 | append: '|' | append: section.settings.cap_3 | append: '|' | append: section.settings.cap_4 | split: '|' -%}
+        {%- assign files = section.settings.file_1 | append: '|' | append: section.settings.file_2 | append: '|' | append: section.settings.file_3 | append: '|' | append: section.settings.file_4 | split: '|' -%}
         {%- for n in (1..4) -%}
           {%- assign key = 'image_' | append: n -%}
           {%- assign img = section.settings[key] -%}
           {%- assign cap = caps[forloop.index0] -%}
+          {%- assign file = files[forloop.index0] -%}
+          {%- if img != blank -%}{%- assign src = img | image_url: width: 1400 -%}{%- else -%}{%- assign src = file | asset_url -%}{%- endif -%}
           <button class="product__thumb {% if forloop.first %}is-active{% endif %}" data-thumb
-            data-img="{{ img | image_url: width: 1200 }}"
+            data-img="{{ src }}"
             data-cap="{{ cap | escape }}"
             aria-label="View {{ n }}">
-            {%- if img != blank -%}
-              <img src="{{ img | image_url: width: 400 }}" alt="View {{ n }}">
-            {%- else -%}
-              <span class="product__thumb-num">{{ n }}</span>
-            {%- endif -%}
+            {% render 'product-photo', image: img, file: file, alt: cap %}
           </button>
         {%- endfor -%}
       </div>
@@ -116,7 +115,13 @@
 {
   "name": "Product",
   "settings": [
-    { "type": "header", "content": "Gallery photos" },
+    { "type": "header", "content": "Gallery photos — Assets files (easiest)" },
+    { "type": "paragraph", "content": "Upload your photos via Edit code → Assets, then enter the exact filenames below (e.g. product-1.jpg)." },
+    { "type": "text", "id": "file_1", "label": "File 1 (main)", "default": "product-1.jpg" },
+    { "type": "text", "id": "file_2", "label": "File 2", "default": "product-2.jpg" },
+    { "type": "text", "id": "file_3", "label": "File 3", "default": "product-3.jpg" },
+    { "type": "text", "id": "file_4", "label": "File 4 (attachments)", "default": "product-4.jpg" },
+    { "type": "header", "content": "Gallery photos — image picker (optional override)" },
     { "type": "image_picker", "id": "image_1", "label": "Image 1 (main)" },
     { "type": "image_picker", "id": "image_2", "label": "Image 2" },
     { "type": "image_picker", "id": "image_3", "label": "Image 3" },

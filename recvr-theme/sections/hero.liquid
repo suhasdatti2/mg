@@ -32,13 +32,12 @@
 
     <div class="hero__media reveal">
       <div class="hero__stage">
-        {%- if section.settings.image != blank -%}
-          <img class="hero__product float-soft" src="{{ section.settings.image | image_url: width: 1200 }}" alt="RECVR Pro massage gun" loading="eager">
-        {%- else -%}
-          <div class="hero__stage-empty">
-            <span>Upload your hero photo in<br>Theme editor → Hero → Product image</span>
-          </div>
-        {%- endif -%}
+        {% render 'product-photo',
+          image: section.settings.image,
+          file: section.settings.image_file,
+          class: 'hero__product float-soft',
+          alt: 'RECVR Pro massage gun',
+          loading: 'eager' %}
       </div>
       <div class="hero__badge">44% OFF<br>TODAY</div>
     </div>
@@ -55,7 +54,8 @@
     { "type": "textarea", "id": "subheadline", "label": "Subheadline", "default": "Pro-grade percussion therapy in a near-silent, 1.2lb device. Loosen tight muscles, ease tension, and recover faster — wherever you are." },
     { "type": "text", "id": "cta_primary", "label": "Primary CTA", "default": "Buy Now — $49.99" },
     { "type": "text", "id": "cta_secondary", "label": "Secondary CTA", "default": "See how it works →" },
-    { "type": "image_picker", "id": "image", "label": "Product image" },
+    { "type": "image_picker", "id": "image", "label": "Product image (optional)" },
+    { "type": "text", "id": "image_file", "label": "…or Assets filename", "default": "product-1.jpg", "info": "Upload via Edit code → Assets, then put the exact filename here." },
     { "type": "checkbox", "id": "pixel_bg", "label": "Animated pixel background (Silent Precision)", "default": true }
   ]
 }

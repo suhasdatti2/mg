@@ -51,6 +51,12 @@
     },
     "product": {
       "type": "product",
+      "settings": {
+        "cap_1": "45dB near-silent brushless motor",
+        "cap_2": "Tool-free magnetic attachments",
+        "cap_3": "12mm deep-tissue amplitude",
+        "cap_4": "6 pro heads for every muscle group"
+      },
       "blocks": {
         "a1": { "type": "accordion", "settings": { "title": "What's in the box", "content": "RECVR™ Pro device, 6 attachment heads, USB-C charging cable, premium travel case, and a quick-start guide." } },
         "a2": { "type": "accordion", "settings": { "title": "Shipping time", "content": "Orders ship within 24 hours from our US warehouse. Free standard shipping arrives in 2–5 business days." } },

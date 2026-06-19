@@ -1,25 +1,36 @@
 <section class="section product" id="product">
   <div class="wrap product__grid">
-    <!-- Media -->
+    <!-- Media gallery -->
     <div class="product__media reveal">
-      <div class="product__main-img" id="ProdGun" style="--gun-1:#5A5F66;--gun-2:#34383D">
-        <div class="gun-stage gun-float">
-          {% render 'massage-gun' %}
-        </div>
+      <div class="product__main">
+        {%- if section.settings.image_1 != blank -%}
+          <img class="product__main-img2" id="ProdMain" src="{{ section.settings.image_1 | image_url: width: 1200 }}" alt="RECVR Pro massage gun">
+        {%- else -%}
+          <div class="product__main-img2 product__empty" id="ProdMain">
+            <span>Upload 4 product photos in<br>Theme editor → Product → Image 1–4</span>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.cap_1 != blank -%}
+          <span class="product__caption" id="ProdCaption">{{ section.settings.cap_1 }}</span>
+        {%- endif -%}
       </div>
       <div class="product__thumbs">
-        <button class="product__thumb is-active" data-thumb data-color="Stealth Grey" data-gun-1="#5A5F66" data-gun-2="#34383D" style="--gun-1:#5A5F66;--gun-2:#34383D" aria-label="Stealth Grey">
-          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
-        </button>
-        <button class="product__thumb" data-thumb data-color="Matte Silver" data-gun-1="#D2D5D9" data-gun-2="#A4A8AD" style="--gun-1:#D2D5D9;--gun-2:#A4A8AD" aria-label="Matte Silver">
-          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
-        </button>
-        <button class="product__thumb" data-thumb data-color="Midnight Blue" data-gun-1="#2A3F66" data-gun-2="#15233E" style="--gun-1:#2A3F66;--gun-2:#15233E" aria-label="Midnight Blue">
-          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
-        </button>
-        <button class="product__thumb" data-thumb data-color="All Black" data-gun-1="#222222" data-gun-2="#0A0A0A" style="--gun-1:#222222;--gun-2:#0A0A0A" aria-label="All Black">
-          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
-        </button>
+        {%- assign caps = section.settings.cap_1 | append: '|' | append: section.settings.cap_2 | append: '|' | append: section.settings.cap_3 | append: '|' | append: section.settings.cap_4 | split: '|' -%}
+        {%- for n in (1..4) -%}
+          {%- assign key = 'image_' | append: n -%}
+          {%- assign img = section.settings[key] -%}
+          {%- assign cap = caps[forloop.index0] -%}
+          <button class="product__thumb {% if forloop.first %}is-active{% endif %}" data-thumb
+            data-img="{{ img | image_url: width: 1200 }}"
+            data-cap="{{ cap | escape }}"
+            aria-label="View {{ n }}">
+            {%- if img != blank -%}
+              <img src="{{ img | image_url: width: 400 }}" alt="View {{ n }}">
+            {%- else -%}
+              <span class="product__thumb-num">{{ n }}</span>
+            {%- endif -%}
+          </button>
+        {%- endfor -%}
       </div>
     </div>
 
@@ -69,6 +80,21 @@
         </span>
       </div>
 
+      <div class="attach">
+        <div class="attach__head">
+          <span class="attach__title">6 Pro attachment heads included</span>
+          <span class="attach__note">Tool-free magnetic swap</span>
+        </div>
+        <div class="attach__grid">
+          <div class="attach__item"><span class="attach__ic"><svg viewBox="0 0 40 40"><circle cx="20" cy="16" r="11"/><rect x="17" y="25" width="6" height="11" rx="3"/></svg></span><span class="attach__lbl">Ball</span></div>
+          <div class="attach__item"><span class="attach__ic"><svg viewBox="0 0 40 40"><path d="M20 5c4 5 5 9 5 13s-2 7-5 7-5-3-5-7 1-8 5-13z"/><rect x="17" y="24" width="6" height="12" rx="3"/></svg></span><span class="attach__lbl">Bullet</span></div>
+          <div class="attach__item"><span class="attach__ic"><svg viewBox="0 0 40 40"><rect x="9" y="7" width="7" height="16" rx="3.5"/><rect x="24" y="7" width="7" height="16" rx="3.5"/><rect x="17" y="22" width="6" height="13" rx="3"/></svg></span><span class="attach__lbl">Fork</span></div>
+          <div class="attach__item"><span class="attach__ic"><svg viewBox="0 0 40 40"><rect x="8" y="11" width="24" height="9" rx="4.5"/><rect x="17" y="20" width="6" height="15" rx="3"/></svg></span><span class="attach__lbl">Flat</span></div>
+          <div class="attach__item"><span class="attach__ic"><svg viewBox="0 0 40 40"><circle cx="20" cy="15" r="12"/><circle cx="20" cy="15" r="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="17" y="26" width="6" height="10" rx="3"/></svg></span><span class="attach__lbl">Cushion</span></div>
+          <div class="attach__item"><span class="attach__ic"><svg viewBox="0 0 40 40"><path d="M14 8c6 0 12 4 12 9s-6 9-12 9z"/><rect x="11" y="24" width="6" height="12" rx="3"/></svg></span><span class="attach__lbl">Thumb</span></div>
+        </div>
+      </div>
+
       <div class="accordion" data-accordion>
         {% for block in section.blocks %}
           <div class="accordion__item" data-accordion-item {{ block.shopify_attributes }}>
@@ -90,10 +116,16 @@
 {
   "name": "Product",
   "settings": [
-    { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+    { "type": "header", "content": "Gallery photos" },
+    { "type": "image_picker", "id": "image_1", "label": "Image 1 (main)" },
     { "type": "image_picker", "id": "image_2", "label": "Image 2" },
     { "type": "image_picker", "id": "image_3", "label": "Image 3" },
-    { "type": "image_picker", "id": "image_4", "label": "Image 4" }
+    { "type": "image_picker", "id": "image_4", "label": "Image 4 (attachments)" },
+    { "type": "header", "content": "Slide captions" },
+    { "type": "text", "id": "cap_1", "label": "Caption 1", "default": "45dB near-silent brushless motor" },
+    { "type": "text", "id": "cap_2", "label": "Caption 2", "default": "Tool-free magnetic attachments" },
+    { "type": "text", "id": "cap_3", "label": "Caption 3", "default": "12mm deep-tissue amplitude" },
+    { "type": "text", "id": "cap_4", "label": "Caption 4", "default": "6 pro heads for every muscle group" }
   ],
   "blocks": [
     {

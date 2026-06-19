@@ -32,9 +32,13 @@
 
     <div class="hero__media reveal">
       <div class="hero__stage">
-        <div class="gun-stage gun-float">
-          {% render 'massage-gun' %}
-        </div>
+        {%- if section.settings.image != blank -%}
+          <img class="hero__product float-soft" src="{{ section.settings.image | image_url: width: 1200 }}" alt="RECVR Pro massage gun" loading="eager">
+        {%- else -%}
+          <div class="hero__stage-empty">
+            <span>Upload your hero photo in<br>Theme editor → Hero → Product image</span>
+          </div>
+        {%- endif -%}
       </div>
       <div class="hero__badge">44% OFF<br>TODAY</div>
     </div>

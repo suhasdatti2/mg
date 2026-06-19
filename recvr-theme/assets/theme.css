@@ -366,11 +366,67 @@ h1, h2, h3, h4 {
   margin-top: 4px;
 }
 .hero__media { position: relative; }
-.hero__img {
+
+/* Decorated stage that holds the floating gun */
+.hero__stage {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 50% 40%, rgba(232, 255, 0, 0.12), transparent 55%),
+    linear-gradient(165deg, #191919, #0b0b0b);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.hero__stage::before {            /* minimalist dotted grid */
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000, transparent 74%);
+  mask-image: radial-gradient(circle at 50% 45%, #000, transparent 74%);
+}
+.hero__stage::after {             /* slow-spinning lime ring */
+  content: '';
+  position: absolute; inset: 17%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(232, 255, 0, 0.28);
+  animation: ring-spin 30s linear infinite;
+}
+.hero__stage .gun-stage { position: relative; z-index: 2; }
+@keyframes ring-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero__stage::after { animation: none; } }
+
+/* --- The gun (shared by hero + product) ------------------------------ */
+.gun-stage {
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.gun {
+  width: 60%; height: auto;
+  filter: drop-shadow(0 30px 42px rgba(0, 0, 0, 0.5));
+}
+.gun--mini { width: 56%; filter: none; }
+.gun-body { fill: var(--gun-1, #1f1f1f); }
+.gun-dark { fill: var(--gun-2, #0a0a0a); }
+.gun-hi { fill: rgba(255, 255, 255, 0.10); }
+.gun-sh { fill: rgba(0, 0, 0, 0.22); }
+.gun-accent { fill: var(--color-accent); }
+.gun-led { fill: var(--color-accent); }
+
+.gun-float { animation: gun-float 5.5s ease-in-out infinite; }
+@keyframes gun-float {
+  0%   { transform: translateY(-12px) rotate(-5deg); }
+  50%  { transform: translateY(12px) rotate(4deg); }
+  100% { transform: translateY(-12px) rotate(-5deg); }
+}
+@media (prefers-reduced-motion: reduce) { .gun-float { animation: none; } }
+
 .hero__badge {
   position: absolute;
   top: 26px; right: -10px;
@@ -508,11 +564,30 @@ h1, h2, h3, h4 {
 }
 .product__media { position: sticky; top: 96px; }
 .product__main-img {
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
   border-radius: var(--radius-lg);
   margin-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(232, 255, 0, 0.10), transparent 55%),
+    linear-gradient(165deg, #1c1c1c, #101010);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
+.product__main-img::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 50%, #000, transparent 72%);
+}
+.product__main-img .gun-stage { position: relative; z-index: 2; }
+
 .product__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .product__thumb {
   aspect-ratio: 1;
@@ -521,8 +596,10 @@ h1, h2, h3, h4 {
   cursor: pointer;
   transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
   overflow: hidden;
+  padding: 0;
+  background: linear-gradient(165deg, #1c1c1c, #0e0e0e);
 }
-.product__thumb img { width: 100%; height: 100%; }
+.product__thumb .gun-stage { width: 100%; height: 100%; }
 .product__thumb.is-active { border-color: var(--color-primary); }
 .product__thumb:hover { transform: translateY(-2px); }
 

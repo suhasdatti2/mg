@@ -31,7 +31,11 @@
     </div>
 
     <div class="hero__media reveal">
-      {% render 'placeholder-image', src: section.settings.image | image_url: width: 1200, alt: 'RECVR Pro massage gun', class: 'hero__img' %}
+      <div class="hero__stage">
+        <div class="gun-stage gun-float">
+          {% render 'massage-gun' %}
+        </div>
+      </div>
       <div class="hero__badge">44% OFF<br>TODAY</div>
     </div>
   </div>

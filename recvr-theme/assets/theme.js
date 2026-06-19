@@ -13,8 +13,7 @@
     stickyHeader();
     mobileNav();
     accordions();
-    colorSwatches();
-    thumbnailSwap();
+    configurator();
     addToCart();
     pixelCanvas();
   }
@@ -185,38 +184,39 @@
     });
   }
 
-  /* --- Color swatches: update selected visual state -------------------- */
-  function colorSwatches() {
-    var groups = document.querySelectorAll('[data-swatches]');
-    groups.forEach(function (group) {
-      var swatches = group.querySelectorAll('[data-swatch]');
-      var label = document.querySelector('[data-swatch-label]');
-      swatches.forEach(function (sw) {
-        sw.addEventListener('click', function () {
-          swatches.forEach(function (s) {
-            s.classList.remove('is-active');
-            s.setAttribute('aria-checked', 'false');
-          });
-          sw.classList.add('is-active');
-          sw.setAttribute('aria-checked', 'true');
-          if (label && sw.dataset.swatch) label.textContent = sw.dataset.swatch;
-        });
+  /* --- Configurator: swatches + thumbnails recolor the main gun --------
+     Both control the same set of variant colors and stay in sync. The
+     main gun is recoloured live via CSS custom properties (--gun-1/2). */
+  function configurator() {
+    var main = document.getElementById('ProdGun');
+    var label = document.querySelector('[data-swatch-label]');
+    var swatches = Array.prototype.slice.call(document.querySelectorAll('[data-swatch]'));
+    var thumbs = Array.prototype.slice.call(document.querySelectorAll('[data-thumb]'));
+
+    function select(name, g1, g2) {
+      if (main && g1) {
+        main.style.setProperty('--gun-1', g1);
+        main.style.setProperty('--gun-2', g2);
+      }
+      if (label && name) label.textContent = name;
+      swatches.forEach(function (s) {
+        var on = s.dataset.swatch === name;
+        s.classList.toggle('is-active', on);
+        s.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+      thumbs.forEach(function (t) {
+        t.classList.toggle('is-active', t.dataset.color === name);
+      });
+    }
+
+    swatches.forEach(function (s) {
+      s.addEventListener('click', function () {
+        select(s.dataset.swatch, s.dataset.gun1, s.dataset.gun2);
       });
     });
-  }
-
-  /* --- Thumbnail click swaps the main product image -------------------- */
-  function thumbnailSwap() {
-    var main = document.querySelector('[data-main-image]');
-    var thumbs = document.querySelectorAll('[data-thumb]');
-    if (!main || !thumbs.length) return;
-    thumbs.forEach(function (thumb) {
-      thumb.addEventListener('click', function () {
-        var img = thumb.querySelector('img');
-        var src = thumb.dataset.thumb || (img && img.src);
-        if (src) main.src = src;
-        thumbs.forEach(function (t) { t.classList.remove('is-active'); });
-        thumb.classList.add('is-active');
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        select(t.dataset.color, t.dataset.gun1, t.dataset.gun2);
       });
     });
   }

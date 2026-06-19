@@ -2,20 +2,24 @@
   <div class="wrap product__grid">
     <!-- Media -->
     <div class="product__media reveal">
-      {% render 'placeholder-image', src: section.settings.image_1 | image_url: width: 1200, alt: 'RECVR Pro', class: 'product__main-img', attrs: 'data-main-image' %}
+      <div class="product__main-img" id="ProdGun" style="--gun-1:#5A5F66;--gun-2:#34383D">
+        <div class="gun-stage gun-float">
+          {% render 'massage-gun' %}
+        </div>
+      </div>
       <div class="product__thumbs">
-        <div class="product__thumb is-active" data-thumb="{{ section.settings.image_1 | image_url: width: 1200 }}">
-          {% render 'placeholder-image', src: section.settings.image_1 | image_url: width: 600, alt: 'View 1' %}
-        </div>
-        <div class="product__thumb" data-thumb="{{ section.settings.image_2 | image_url: width: 1200 }}">
-          {% render 'placeholder-image', src: section.settings.image_2 | image_url: width: 600, alt: 'View 2', light: true %}
-        </div>
-        <div class="product__thumb" data-thumb="{{ section.settings.image_3 | image_url: width: 1200 }}">
-          {% render 'placeholder-image', src: section.settings.image_3 | image_url: width: 600, alt: 'View 3' %}
-        </div>
-        <div class="product__thumb" data-thumb="{{ section.settings.image_4 | image_url: width: 1200 }}">
-          {% render 'placeholder-image', src: section.settings.image_4 | image_url: width: 600, alt: 'View 4', light: true %}
-        </div>
+        <button class="product__thumb is-active" data-thumb data-color="Stealth Grey" data-gun-1="#5A5F66" data-gun-2="#34383D" style="--gun-1:#5A5F66;--gun-2:#34383D" aria-label="Stealth Grey">
+          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
+        </button>
+        <button class="product__thumb" data-thumb data-color="Matte Silver" data-gun-1="#D2D5D9" data-gun-2="#A4A8AD" style="--gun-1:#D2D5D9;--gun-2:#A4A8AD" aria-label="Matte Silver">
+          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
+        </button>
+        <button class="product__thumb" data-thumb data-color="Midnight Blue" data-gun-1="#2A3F66" data-gun-2="#15233E" style="--gun-1:#2A3F66;--gun-2:#15233E" aria-label="Midnight Blue">
+          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
+        </button>
+        <button class="product__thumb" data-thumb data-color="All Black" data-gun-1="#222222" data-gun-2="#0A0A0A" style="--gun-1:#222222;--gun-2:#0A0A0A" aria-label="All Black">
+          <div class="gun-stage">{% render 'massage-gun', class: 'gun--mini' %}</div>
+        </button>
       </div>
     </div>
 
@@ -38,10 +42,10 @@
       <div>
         <p class="product__label" style="margin-bottom:10px">Color — <span data-swatch-label>Stealth Grey</span></p>
         <div class="product__swatches" data-swatches role="radiogroup" aria-label="Color">
-          <button class="swatch is-active" data-swatch="Stealth Grey" style="background:#4A4E54" aria-checked="true" aria-label="Stealth Grey"></button>
-          <button class="swatch" data-swatch="Matte Silver" style="background:#C7CACE" aria-checked="false" aria-label="Matte Silver"></button>
-          <button class="swatch" data-swatch="Midnight Blue" style="background:#1B2A4A" aria-checked="false" aria-label="Midnight Blue"></button>
-          <button class="swatch" data-swatch="All Black" style="background:#0A0A0A" aria-checked="false" aria-label="All Black"></button>
+          <button class="swatch is-active" data-swatch="Stealth Grey" data-gun-1="#5A5F66" data-gun-2="#34383D" style="background:#4A4E54" aria-checked="true" aria-label="Stealth Grey"></button>
+          <button class="swatch" data-swatch="Matte Silver" data-gun-1="#D2D5D9" data-gun-2="#A4A8AD" style="background:#C7CACE" aria-checked="false" aria-label="Matte Silver"></button>
+          <button class="swatch" data-swatch="Midnight Blue" data-gun-1="#2A3F66" data-gun-2="#15233E" style="background:#1B2A4A" aria-checked="false" aria-label="Midnight Blue"></button>
+          <button class="swatch" data-swatch="All Black" data-gun-1="#222222" data-gun-2="#0A0A0A" style="background:#0A0A0A" aria-checked="false" aria-label="All Black"></button>
         </div>
       </div>
 

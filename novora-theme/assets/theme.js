@@ -140,40 +140,25 @@
     var caption = document.getElementById('ProdCaption');
     var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-thumb]'));
 
-    function activateThumb(thumb) {
-      if (!thumb) return;
-      var src = thumb.dataset.img;
-      if (src && main && main.tagName === 'IMG') {
-        main.style.opacity = '0';
-        setTimeout(function () { main.src = src; main.style.opacity = '1'; }, 120);
-      }
-      if (caption && thumb.dataset.cap) caption.textContent = thumb.dataset.cap;
-      thumbs.forEach(function (t) { t.classList.remove('is-active'); });
-      thumb.classList.add('is-active');
-    }
-
     thumbs.forEach(function (thumb) {
       if (thumb.dataset.bound) return;
       thumb.dataset.bound = '1';
-      thumb.addEventListener('click', function () { activateThumb(thumb); });
+      thumb.addEventListener('click', function () {
+        var src = thumb.dataset.img;
+        if (src && main && main.tagName === 'IMG') {
+          main.style.opacity = '0';
+          setTimeout(function () {
+            main.src = src;
+            main.style.opacity = '1';
+          }, 120);
+        }
+        if (caption && thumb.dataset.cap) caption.textContent = thumb.dataset.cap;
+        thumbs.forEach(function (t) { t.classList.remove('is-active'); });
+        thumb.classList.add('is-active');
+      });
     });
 
-    /* Thumb strip prev / next arrows */
-    var strip = (root || document).querySelector('[data-thumbs-strip]');
-    var prevBtn = (root || document).querySelector('[data-thumb-prev]');
-    var nextBtn = (root || document).querySelector('[data-thumb-next]');
-    if (strip && prevBtn && !prevBtn.dataset.bound) {
-      prevBtn.dataset.bound = '1';
-      nextBtn.dataset.bound = '1';
-      prevBtn.addEventListener('click', function () {
-        strip.scrollBy({ left: -(strip.clientWidth / 2), behavior: 'smooth' });
-      });
-      nextBtn.addEventListener('click', function () {
-        strip.scrollBy({ left: strip.clientWidth / 2, behavior: 'smooth' });
-      });
-    }
-
-    /* Each [data-swatches] group updates its own label + syncs gallery. */
+    /* Each [data-swatches] group (Nation, Size, …) updates its own label. */
     var groups = Array.prototype.slice.call(root.querySelectorAll('[data-swatches]'));
     groups.forEach(function (group) {
       if (group.dataset.bound) return;
@@ -190,10 +175,6 @@
           opt.classList.add('is-active');
           opt.setAttribute('aria-checked', 'true');
           if (label && opt.dataset.swatch) label.textContent = opt.dataset.swatch;
-          /* Sync gallery thumb when nation swatch has a thumb target */
-          if (opt.dataset.thumbTarget !== undefined) {
-            activateThumb(thumbs[parseInt(opt.dataset.thumbTarget, 10)]);
-          }
         });
       });
     });

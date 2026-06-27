@@ -15,7 +15,7 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#16130F">
+    <meta name="theme-color" content="#1C1A17">
     <link rel="canonical" href="{{ canonical_url }}">
 
     {%- if settings.favicon != blank -%}
@@ -28,19 +28,19 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {%- comment -%} Google Fonts: Anton (display headlines) + Inter (body) {%- endcomment -%}
+    {%- comment -%} Google Fonts: Playfair Display (serif headlines) + Inter (body) {%- endcomment -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     {{ content_for_header }}
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     <style>
       :root {
-        --color-primary: {{ settings.color_primary | default: '#16130F' }};
-        --color-accent: {{ settings.color_accent | default: '#C9A227' }};
-        --color-bg: {{ settings.color_bg | default: '#F1E7D8' }};
+        --color-primary: {{ settings.color_primary | default: '#1C1A17' }};
+        --color-accent: {{ settings.color_accent | default: '#9B2C2C' }};
+        --color-bg: {{ settings.color_bg | default: '#F4EFE7' }};
         --color-text: {{ settings.color_text | default: '#211C15' }};
       }
     </style>

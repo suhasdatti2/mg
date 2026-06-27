@@ -1,10 +1,4 @@
 <section class="section final">
-  {%- if section.settings.paths_bg -%}
-    <div class="final__paths" aria-hidden="true">
-      {% render 'floating-paths', position: 1 %}
-      {% render 'floating-paths', position: -1 %}
-    </div>
-  {%- endif -%}
   <div class="wrap final__inner reveal">
     <p class="eyebrow">{{ section.settings.eyebrow }}</p>
     <h2 class="final__title">{{ section.settings.headline }} <span class="accent">{{ section.settings.headline_accent }}</span></h2>
@@ -23,8 +17,7 @@
     { "type": "text", "id": "headline_accent", "label": "Headline accent", "default": "nation." },
     { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Join 12,000+ fans repping their colors. Stadium-grade World Cup jerseys, fully customizable, now up to 50% off." },
     { "type": "text", "id": "cta", "label": "CTA", "default": "Shop Jerseys — $34.99" },
-    { "type": "text", "id": "urgency", "label": "Urgency line", "default": "⚡ World Cup drop selling fast · Free worldwide shipping · Ships in 48hrs" },
-    { "type": "checkbox", "id": "paths_bg", "label": "Animated floating paths background", "default": true }
+    { "type": "text", "id": "urgency", "label": "Urgency line", "default": "World Cup drop selling fast · Free worldwide shipping · Ships in 48hrs" }
   ]
 }
 {% endschema %}

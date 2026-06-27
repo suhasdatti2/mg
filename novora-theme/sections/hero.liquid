@@ -1,13 +1,8 @@
 <section class="hero">
-  {%- if section.settings.pixel_bg -%}
-    <div class="hero__pixels" aria-hidden="true">
-      <canvas data-pixel-canvas data-gap="6" data-speed="35" data-colors="rgba(255,255,255,0.08),rgba(201,162,39,0.30),rgba(255,255,255,0.14),rgba(201,162,39,0.18),{{ settings.color_accent | default: '#C9A227' }}"></canvas>
-    </div>
-  {%- endif -%}
   <div class="wrap hero__grid">
     <div class="hero__content reveal">
       <p class="eyebrow hero__eyebrow">{{ section.settings.eyebrow }}</p>
-      <h1 class="hero__title"><span class="hero__shimmer">{{ section.settings.headline }}</span> <span class="accent">{{ section.settings.headline_accent }}</span></h1>
+      <h1 class="hero__title">{{ section.settings.headline }} <span class="accent">{{ section.settings.headline_accent }}</span></h1>
       <p class="hero__sub">{{ section.settings.subheadline }}</p>
       <div class="hero__ctas">
         <a href="#product" class="btn btn--lime btn--lg">{{ section.settings.cta_primary }}</a>
@@ -31,7 +26,6 @@
 
     <div class="hero__media reveal">
       <div class="hero__stage">
-        <canvas class="hero__stage-pixels" data-pixel-canvas data-gap="5" data-speed="42" data-colors="rgba(201,162,39,0.7),rgba(201,162,39,0.35),rgba(255,255,255,0.18),rgba(201,162,39,0.9),rgba(255,255,255,0.10)" aria-hidden="true"></canvas>
         {% render 'product-photo',
           image: section.settings.image,
           file: section.settings.image_file,
@@ -39,7 +33,7 @@
           alt: 'Novora World Cup jersey',
           loading: 'eager' %}
       </div>
-      <div class="hero__badge">UP TO<br>50% OFF</div>
+      <div class="hero__badge">Up to<br>50% Off</div>
     </div>
   </div>
 </section>
@@ -53,10 +47,9 @@
     { "type": "text", "id": "headline_accent", "label": "Headline accent word", "default": "nation." },
     { "type": "textarea", "id": "subheadline", "label": "Subheadline", "default": "Stadium-grade World Cup jerseys for every nation — breathable, true-to-fit, and ready to personalize with your name and number. Free worldwide shipping." },
     { "type": "text", "id": "cta_primary", "label": "Primary CTA", "default": "Shop Jerseys — $34.99" },
-    { "type": "text", "id": "cta_secondary", "label": "Secondary CTA", "default": "How it works →" },
+    { "type": "text", "id": "cta_secondary", "label": "Secondary CTA", "default": "How it works" },
     { "type": "image_picker", "id": "image", "label": "Hero jersey image (optional)" },
-    { "type": "text", "id": "image_file", "label": "…or Assets filename", "default": "jersey-1.jpg", "info": "Upload via Edit code → Assets, then put the exact filename here." },
-    { "type": "checkbox", "id": "pixel_bg", "label": "Animated sparkle background", "default": true }
+    { "type": "text", "id": "image_file", "label": "…or Assets filename", "default": "jersey-1.jpg", "info": "Upload via Edit code → Assets, then put the exact filename here." }
   ]
 }
 {% endschema %}

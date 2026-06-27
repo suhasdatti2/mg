@@ -23,9 +23,8 @@
         "headline_accent": "nation.",
         "subheadline": "Stadium-grade World Cup jerseys for every nation — breathable, true-to-fit, and ready to personalize with your name and number. Free worldwide shipping.",
         "cta_primary": "Shop Jerseys — $34.99",
-        "cta_secondary": "How it works →",
-        "image_file": "jersey-1.jpg",
-        "pixel_bg": true
+        "cta_secondary": "How it works",
+        "image_file": "jersey-1.jpg"
       }
     },
     "ticker": {
@@ -136,8 +135,7 @@
         "headline_accent": "nation.",
         "subtext": "Join 12,000+ fans repping their colors. Stadium-grade World Cup jerseys, fully customizable, now up to 50% off.",
         "cta": "Shop Jerseys — $34.99",
-        "urgency": "⚡ World Cup drop selling fast · Free worldwide shipping · Ships in 48hrs",
-        "paths_bg": true
+        "urgency": "World Cup drop selling fast · Free worldwide shipping · Ships in 48hrs"
       }
     },
     "footer": {

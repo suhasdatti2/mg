@@ -14,22 +14,31 @@
           <span class="product__caption" id="ProdCaption">{{ section.settings.cap_1 }}</span>
         {%- endif -%}
       </div>
-      <div class="product__thumbs">
-        {%- assign caps = section.settings.cap_1 | append: '|' | append: section.settings.cap_2 | append: '|' | append: section.settings.cap_3 | append: '|' | append: section.settings.cap_4 | split: '|' -%}
-        {%- assign files = section.settings.file_1 | append: '|' | append: section.settings.file_2 | append: '|' | append: section.settings.file_3 | append: '|' | append: section.settings.file_4 | split: '|' -%}
-        {%- for n in (1..4) -%}
-          {%- assign key = 'image_' | append: n -%}
-          {%- assign img = section.settings[key] -%}
-          {%- assign cap = caps[forloop.index0] -%}
-          {%- assign file = files[forloop.index0] -%}
-          {%- if img != blank -%}{%- assign src = img | image_url: width: 1400 -%}{%- else -%}{%- assign src = file | asset_url -%}{%- endif -%}
-          <button class="product__thumb {% if forloop.first %}is-active{% endif %}" data-thumb
-            data-img="{{ src }}"
-            data-cap="{{ cap | escape }}"
-            aria-label="View {{ n }}">
-            {% render 'product-photo', image: img, file: file, alt: cap %}
-          </button>
-        {%- endfor -%}
+
+      <div class="product__thumbs-wrap">
+        <button class="product__thumb-arrow" data-thumb-prev aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="product__thumbs" data-thumbs-strip>
+          {%- assign caps  = section.settings.cap_1  | append: '|' | append: section.settings.cap_2  | append: '|' | append: section.settings.cap_3  | append: '|' | append: section.settings.cap_4  | append: '|' | append: section.settings.cap_5  | append: '|' | append: section.settings.cap_6  | split: '|' -%}
+          {%- assign files = section.settings.file_1 | append: '|' | append: section.settings.file_2 | append: '|' | append: section.settings.file_3 | append: '|' | append: section.settings.file_4 | append: '|' | append: section.settings.file_5 | append: '|' | append: section.settings.file_6 | split: '|' -%}
+          {%- for n in (1..6) -%}
+            {%- assign key  = 'image_' | append: n -%}
+            {%- assign img  = section.settings[key] -%}
+            {%- assign cap  = caps[forloop.index0] -%}
+            {%- assign file = files[forloop.index0] -%}
+            {%- if img != blank -%}{%- assign src = img | image_url: width: 1400 -%}{%- else -%}{%- assign src = file | asset_url -%}{%- endif -%}
+            <button class="product__thumb {% if forloop.first %}is-active{% endif %}" data-thumb
+              data-img="{{ src }}"
+              data-cap="{{ cap | escape }}"
+              aria-label="View {{ n }}">
+              {% render 'product-photo', image: img, file: file, alt: cap %}
+            </button>
+          {%- endfor -%}
+        </div>
+        <button class="product__thumb-arrow" data-thumb-next aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
 
@@ -49,15 +58,16 @@
         <span class="product__save">SAVE 50%</span>
       </div>
 
+      <!-- Nation swatches — data-thumb-target matches gallery slot (0-indexed) -->
       <div class="product__select">
         <p class="product__label" style="margin-bottom:10px">Nation — <span data-swatch-label>Argentina</span></p>
         <div class="product__swatches" data-swatches role="radiogroup" aria-label="Nation">
-          <button class="swatch is-active" data-swatch="Argentina" style="background:linear-gradient(180deg,#75AADB 50%,#fff 50%)" aria-checked="true" aria-label="Argentina"></button>
-          <button class="swatch" data-swatch="Brazil" style="background:#FEDD00" aria-checked="false" aria-label="Brazil"></button>
-          <button class="swatch" data-swatch="France" style="background:#1A2A6C" aria-checked="false" aria-label="France"></button>
-          <button class="swatch" data-swatch="Portugal" style="background:#C8102E" aria-checked="false" aria-label="Portugal"></button>
-          <button class="swatch" data-swatch="England" style="background:#fff;border-color:#bbb" aria-checked="false" aria-label="England"></button>
-          <button class="swatch" data-swatch="Spain" style="background:linear-gradient(180deg,#C60B1E 50%,#FFC400 50%)" aria-checked="false" aria-label="Spain"></button>
+          <button class="swatch is-active" data-swatch="Argentina" data-thumb-target="0" style="background:linear-gradient(180deg,#75AADB 50%,#fff 50%)" aria-checked="true"  aria-label="Argentina"></button>
+          <button class="swatch"           data-swatch="Brazil"    data-thumb-target="1" style="background:#FEDD00"                                     aria-checked="false" aria-label="Brazil"></button>
+          <button class="swatch"           data-swatch="France"    data-thumb-target="2" style="background:#1A2A6C"                                     aria-checked="false" aria-label="France"></button>
+          <button class="swatch"           data-swatch="Portugal"  data-thumb-target="3" style="background:#C8102E"                                     aria-checked="false" aria-label="Portugal"></button>
+          <button class="swatch"           data-swatch="England"   data-thumb-target="4" style="background:#fff;border-color:#bbb"                      aria-checked="false" aria-label="England"></button>
+          <button class="swatch"           data-swatch="Spain"     data-thumb-target="5" style="background:linear-gradient(180deg,#C60B1E 50%,#FFC400 50%)" aria-checked="false" aria-label="Spain"></button>
         </div>
       </div>
 
@@ -128,22 +138,28 @@
 {
   "name": "Product",
   "settings": [
-    { "type": "header", "content": "Gallery photos — Assets files (easiest)" },
-    { "type": "paragraph", "content": "Upload your photos via Edit code → Assets, then enter the exact filenames below (e.g. jersey-1.jpg)." },
-    { "type": "text", "id": "file_1", "label": "File 1 (main)", "default": "jersey-1.jpg" },
-    { "type": "text", "id": "file_2", "label": "File 2", "default": "jersey-2.jpg" },
-    { "type": "text", "id": "file_3", "label": "File 3", "default": "jersey-3.jpg" },
-    { "type": "text", "id": "file_4", "label": "File 4", "default": "jersey-4.jpg" },
+    { "type": "header", "content": "Gallery photos — Assets files" },
+    { "type": "paragraph", "content": "Upload photos via Edit code → Assets. Filenames here must match exactly. Slot order matches the nation swatch order (slot 1 = Argentina, slot 2 = Brazil, etc.)." },
+    { "type": "text", "id": "file_1", "label": "Slot 1 — Argentina", "default": "jersey-1.jpg" },
+    { "type": "text", "id": "file_2", "label": "Slot 2 — Brazil",    "default": "jersey-2.jpg" },
+    { "type": "text", "id": "file_3", "label": "Slot 3 — France",    "default": "jersey-3.jpg" },
+    { "type": "text", "id": "file_4", "label": "Slot 4 — Portugal",  "default": "jersey-4.jpg" },
+    { "type": "text", "id": "file_5", "label": "Slot 5 — England",   "default": "jersey-5.jpg" },
+    { "type": "text", "id": "file_6", "label": "Slot 6 — Spain",     "default": "jersey-6.jpg" },
     { "type": "header", "content": "Gallery photos — image picker (optional override)" },
-    { "type": "image_picker", "id": "image_1", "label": "Image 1 (main)" },
+    { "type": "image_picker", "id": "image_1", "label": "Image 1" },
     { "type": "image_picker", "id": "image_2", "label": "Image 2" },
     { "type": "image_picker", "id": "image_3", "label": "Image 3" },
     { "type": "image_picker", "id": "image_4", "label": "Image 4" },
+    { "type": "image_picker", "id": "image_5", "label": "Image 5" },
+    { "type": "image_picker", "id": "image_6", "label": "Image 6" },
     { "type": "header", "content": "Slide captions" },
     { "type": "text", "id": "cap_1", "label": "Caption 1", "default": "Stadium-grade heavyweight knit" },
     { "type": "text", "id": "cap_2", "label": "Caption 2", "default": "Crisp heat-pressed badges" },
     { "type": "text", "id": "cap_3", "label": "Caption 3", "default": "Breathable quick-dry mesh" },
-    { "type": "text", "id": "cap_4", "label": "Caption 4", "default": "Add your name & number free" }
+    { "type": "text", "id": "cap_4", "label": "Caption 4", "default": "Free name and number printing" },
+    { "type": "text", "id": "cap_5", "label": "Caption 5", "default": "" },
+    { "type": "text", "id": "cap_6", "label": "Caption 6", "default": "" }
   ],
   "blocks": [
     {
@@ -159,10 +175,10 @@
     {
       "name": "Product",
       "blocks": [
-        { "type": "accordion", "settings": { "title": "Sizing & fit", "content": "True to size with a standard athletic cut. S (chest 36\"), M (40\"), L (44\"), XL (48\"), XXL (52\"). Between sizes? Size up for a relaxed fan fit." } },
-        { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "Free tracked worldwide shipping. Orders dispatch within 48 hours; delivery typically 7–12 business days depending on your country." } },
-        { "type": "accordion", "settings": { "title": "Material & care", "content": "100% breathable quick-dry polyester knit with heat-pressed crests. Machine wash cold, inside out, and hang dry to keep colors vivid." } },
-        { "type": "accordion", "settings": { "title": "Returns", "content": "Not the right fit? Return within 30 days for a free exchange or full refund. Personalized jerseys are final sale." } }
+        { "type": "accordion", "settings": { "title": "Sizing & fit", "content": "True to size with a standard athletic cut. S (chest 36\"), M (40\"), L (44\"), XL (48\"), XXL (52\"). Between sizes? Size up for a relaxed fit." } },
+        { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "Free tracked worldwide shipping. Orders dispatch within 48 hours; delivery is typically 7–12 business days depending on your country." } },
+        { "type": "accordion", "settings": { "title": "Material & care", "content": "100% quick-dry polyester knit with heat-pressed crests. Machine wash cold, inside out, and hang dry to keep colors vivid." } },
+        { "type": "accordion", "settings": { "title": "Returns", "content": "Non-personalized jerseys can be returned within 30 days for a free size exchange or full refund. Personalized jerseys are final sale." } }
       ]
     }
   ]

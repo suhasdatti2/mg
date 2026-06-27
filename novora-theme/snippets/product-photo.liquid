@@ -1,0 +1,22 @@
+{%- comment -%}
+  Renders a product photo from one of two sources, in priority order:
+    1. an uploaded image_picker object (param: image)
+    2. a file in the theme's /assets folder (param: file, e.g. "product-1.jpg")
+  Falls back to a clean blank state if neither exists, so it never looks broken.
+  Params: image, file, class, alt, loading
+{%- endcomment -%}
+{%- liquid
+  assign url = ''
+  if image != blank
+    assign url = image | image_url: width: 1400
+  elsif file != blank
+    assign url = file | asset_url
+  endif
+-%}
+<img
+  {% if id != blank %}id="{{ id }}"{% endif %}
+  class="{{ class }}"
+  src="{{ url | default: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}"
+  alt="{{ alt | escape }}"
+  loading="{{ loading | default: 'lazy' }}"
+  onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';this.classList.add('is-blank');">

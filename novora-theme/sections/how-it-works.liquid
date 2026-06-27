@@ -1,0 +1,48 @@
+<section class="section how" id="how-it-works">
+  <div class="wrap">
+    <div class="how__head reveal">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+    </div>
+    <div class="how__steps">
+      {% for block in section.blocks %}
+        <div class="how__step reveal" {{ block.shopify_attributes }}>
+          <div class="how__step-num">{{ block.settings.number }}</div>
+          <h3 class="how__step-title">{{ block.settings.title }}</h3>
+          <p class="how__step-desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How it works" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Your kit in three steps." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How it works",
+      "blocks": [
+        { "type": "step", "settings": { "number": "01", "title": "Pick your nation", "description": "Choose from all 32 World Cup nations in home or away colors, then select your size from the guide." } },
+        { "type": "step", "settings": { "number": "02", "title": "Personalize it", "description": "Add any name and number in official match fonts — make it your hero's, or your own." } },
+        { "type": "step", "settings": { "number": "03", "title": "Wear it proud", "description": "We dispatch in 48 hours with free tracked shipping. Suit up and represent on match day." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

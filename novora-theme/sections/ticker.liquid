@@ -1,0 +1,41 @@
+<section class="ticker" aria-label="Highlights">
+  <div class="ticker__track">
+    {%- comment -%} Content rendered twice for a seamless infinite loop {%- endcomment -%}
+    {% for i in (1..2) %}
+      {% for block in section.blocks %}
+        <span class="ticker__item">{{ block.settings.text }}</span>
+        <span class="ticker__dot" aria-hidden="true"></span>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ticker",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker",
+      "blocks": [
+        { "type": "item", "settings": { "text": "“Fits perfectly, looks legit.” — Diego R." } },
+        { "type": "item", "settings": { "text": "All 32 Nations" } },
+        { "type": "item", "settings": { "text": "“Quality shocked me for the price.” — Amara O." } },
+        { "type": "item", "settings": { "text": "Custom Name & Number" } },
+        { "type": "item", "settings": { "text": "“Shipped faster than expected.” — Liam C." } },
+        { "type": "item", "settings": { "text": "Stadium-Grade Fabric" } },
+        { "type": "item", "settings": { "text": "“Got compliments all match day.” — Sofia M." } },
+        { "type": "item", "settings": { "text": "Free Worldwide Shipping" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

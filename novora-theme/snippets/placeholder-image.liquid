@@ -1,0 +1,17 @@
+{%- comment -%}
+  Renders an <img> that gracefully falls back to a CSS gradient background
+  (via the .ph / .ph--light class) if the real photo hasn't been uploaded yet.
+  Params:
+    src    - image url (optional)
+    alt    - alt text
+    class  - extra classes
+    light  - true for a light-toned placeholder
+    attrs  - extra attributes (e.g. data-main-image)
+{%- endcomment -%}
+<img
+  src="{{ src | default: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}"
+  alt="{{ alt | escape }}"
+  loading="lazy"
+  class="ph {% if light %}ph--light{% endif %} {{ class }}"
+  onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';"
+  {{ attrs }}>

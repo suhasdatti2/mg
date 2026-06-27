@@ -1,0 +1,16 @@
+{
+  "current": {
+    "color_primary": "#16130F",
+    "color_accent": "#C9A227",
+    "color_bg": "#F1E7D8",
+    "color_text": "#211C15"
+  },
+  "presets": {
+    "Novora": {
+      "color_primary": "#16130F",
+      "color_accent": "#C9A227",
+      "color_bg": "#F1E7D8",
+      "color_text": "#211C15"
+    }
+  }
+}

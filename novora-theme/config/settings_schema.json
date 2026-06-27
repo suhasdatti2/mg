@@ -1,0 +1,48 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Novora",
+    "theme_version": "1.0.0",
+    "theme_author": "Novora",
+    "theme_documentation_url": "https://novora.com",
+    "theme_support_url": "https://novora.com"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary (warm ink)",
+        "default": "#16130F"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (trophy gold)",
+        "default": "#C9A227"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background (warm clay)",
+        "default": "#F1E7D8"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#211C15"
+      }
+    ]
+  }
+]

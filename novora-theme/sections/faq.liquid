@@ -1,0 +1,58 @@
+<section class="section faq" id="faq">
+  <div class="wrap faq__grid">
+    <div class="faq__intro reveal">
+      <p class="eyebrow eyebrow--accent">{{ section.settings.eyebrow }}</p>
+      <h2 class="faq__title">{{ section.settings.headline }}</h2>
+      <p class="faq__contact">Still curious? Email us at <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>
+    </div>
+    <div class="faq__items reveal">
+      <div class="accordion" data-accordion>
+        {% for block in section.blocks %}
+          <div class="accordion__item" data-accordion-item {{ block.shopify_attributes }}>
+            <button class="accordion__trigger" data-accordion-trigger aria-expanded="false">
+              {{ block.settings.question }}
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" data-accordion-panel>
+              <div class="accordion__panel-inner">{{ block.settings.answer }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQ" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Everything you need to know" },
+    { "type": "text", "id": "email", "label": "Contact email", "default": "support@novora.com" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "Are these official licensed jerseys?", "answer": "Novora jerseys are premium fan-edition replicas — same look, colors and crests as match kits at a fraction of the price. They're not sold as licensed merchandise." } },
+        { "type": "faq", "settings": { "question": "How do I find my size?", "answer": "Our jerseys are true to size with a standard athletic cut: S fits a 36\" chest, M 40\", L 44\", XL 48\", XXL 52\". If you're between sizes or prefer a looser fit, size up." } },
+        { "type": "faq", "settings": { "question": "Can I add my own name and number?", "answer": "Yes — free of charge. Add any name and number in official match fonts on the product page before checkout. Personalized jerseys are final sale." } },
+        { "type": "faq", "settings": { "question": "How long does shipping take?", "answer": "We dispatch within 48 hours with free tracked worldwide shipping. Most orders arrive in 7–12 business days depending on your country." } },
+        { "type": "faq", "settings": { "question": "Which nations can I order?", "answer": "All 32 World Cup nations in both home and away kits. Popular nations like Argentina, Brazil, France and Portugal are always in stock." } },
+        { "type": "faq", "settings": { "question": "What if it doesn't fit?", "answer": "Non-personalized jerseys can be returned within 30 days for a free size exchange or a full refund — no hassle." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__head reveal">
+      <div>
+        <p class="eyebrow eyebrow--accent">{{ section.settings.eyebrow }}</p>
+        <h2>{{ section.settings.headline }}</h2>
+      </div>
+      <div class="reviews__score">
+        <div class="reviews__score-num">4.9</div>
+        <div class="reviews__score-stars">★★★★★</div>
+        <div class="reviews__score-count">Based on 2,431 reviews</div>
+      </div>
+    </div>
+    <div class="reviews__grid">
+      {% for block in section.blocks %}
+        <article class="review-card reveal" {{ block.shopify_attributes }}>
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">“{{ block.settings.text }}”</p>
+          <div class="review-card__name">{{ block.settings.name }}</div>
+          <div class="review-card__meta">{{ block.settings.city }} · <span class="review-card__verified">✓ Verified</span></div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Loved by 12,000+ fans" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Fans love their kits." }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Review" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "city", "label": "City" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "text": "Honestly looks identical to the kit I saw in the official store, at a third of the price. Stitching and badge are spot on.", "name": "Diego R.", "city": "Buenos Aires, AR" } },
+        { "type": "review", "settings": { "text": "Got my name and number added and it came out perfect. Wore it to the bar for the match and three people asked where I got it.", "name": "Liam C.", "city": "Manchester, UK" } },
+        { "type": "review", "settings": { "text": "Fabric is thick and breathable, not the thin knockoff stuff. True to size — ordered a medium and it fits great.", "name": "Amara O.", "city": "Lagos, NG" } },
+        { "type": "review", "settings": { "text": "Bought jerseys for my whole 5-a-side team. Shipping was quick and every single one was flawless. Will reorder.", "name": "Mateo S.", "city": "Madrid, ES" } },
+        { "type": "review", "settings": { "text": "Gifted one to my dad for the World Cup and he hasn't taken it off. Quality genuinely surprised both of us.", "name": "Sofia M.", "city": "Toronto, CA" } },
+        { "type": "review", "settings": { "text": "Was nervous ordering from a new store but the tracking was clear and it arrived in 9 days. Kit is gorgeous.", "name": "Kenji T.", "city": "Osaka, JP" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

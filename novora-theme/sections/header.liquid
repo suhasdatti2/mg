@@ -1,0 +1,37 @@
+<header class="header" data-header>
+  <div class="wrap header__inner">
+    <a href="/" class="header__logo">{{ section.settings.logo_text }}</a>
+
+    <nav class="header__nav" aria-label="Primary">
+      <a href="#features">Why Novora</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#product" class="btn btn--lime">{{ section.settings.cta_text }}</a>
+      <button class="header__burger" data-burger aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" data-mobile-nav aria-label="Mobile">
+    <a href="#features">Why Novora</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#product" class="btn btn--lime btn--block">{{ section.settings.cta_text }}</a>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "text", "id": "logo_text", "label": "Logo text", "default": "NOVORA" },
+    { "type": "text", "id": "cta_text", "label": "CTA button", "default": "Shop Jerseys — $34.99" }
+  ]
+}
+{% endschema %}

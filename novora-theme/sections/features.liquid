@@ -1,0 +1,51 @@
+<section class="section features" id="features">
+  <div class="wrap">
+    <div class="features__head reveal">
+      <p class="eyebrow eyebrow--accent">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+    </div>
+    <div class="features__grid">
+      {% for block in section.blocks %}
+        <article class="feature-card reveal" {{ block.shopify_attributes }}>
+          <div class="feature-card__stat">{{ block.settings.stat }}</div>
+          <h3 class="feature-card__title">{{ block.settings.title }}</h3>
+          <p class="feature-card__desc">{{ block.settings.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Features",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why fans choose Novora" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Match-day quality. Fair prices." }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "text", "id": "stat", "label": "Stat" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features",
+      "blocks": [
+        { "type": "feature", "settings": { "stat": "32", "title": "Nations", "description": "Every World Cup nation in home and away kits — find your colors, or collect a few rivals." } },
+        { "type": "feature", "settings": { "stat": "AAA+", "title": "Stadium-Grade Fabric", "description": "Heavyweight, true-color knit with crisp heat-pressed badges that hold up wash after wash." } },
+        { "type": "feature", "settings": { "stat": "4-Way", "title": "Breathable Stretch", "description": "Moisture-wicking, quick-dry mesh that moves with you — on the pitch or in the stands." } },
+        { "type": "feature", "settings": { "stat": "Name+#", "title": "Fully Customizable", "description": "Add any name and number in official match fonts. Make it yours, or gift it to a die-hard fan." } },
+        { "type": "feature", "settings": { "stat": "48h", "title": "Fast Dispatch", "description": "Orders leave our warehouse within 48 hours with tracked, free worldwide shipping." } },
+        { "type": "feature", "settings": { "stat": "True", "title": "True-To-Size Fit", "description": "Tailored to standard sizing with a detailed size guide, so it fits right the first time." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

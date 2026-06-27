@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "World Cup Drop is Live — Up to 50% Off | Free Worldwide Shipping |",
+        "link_text": "Shop Jerseys →",
+        "link": "#product"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "NOVORA",
+        "cta_text": "Shop Jerseys — $34.99"
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "2026 World Cup Collection",
+        "headline": "Wear your",
+        "headline_accent": "nation.",
+        "subheadline": "Stadium-grade World Cup jerseys for every nation — breathable, true-to-fit, and ready to personalize with your name and number. Free worldwide shipping.",
+        "cta_primary": "Shop Jerseys — $34.99",
+        "cta_secondary": "How it works →",
+        "image_file": "jersey-1.jpg",
+        "pixel_bg": true
+      }
+    },
+    "ticker": {
+      "type": "ticker",
+      "blocks": {
+        "b1": { "type": "item", "settings": { "text": "“Fits perfectly, looks legit.” — Diego R." } },
+        "b2": { "type": "item", "settings": { "text": "All 32 Nations" } },
+        "b3": { "type": "item", "settings": { "text": "“Quality shocked me for the price.” — Amara O." } },
+        "b4": { "type": "item", "settings": { "text": "Custom Name & Number" } },
+        "b5": { "type": "item", "settings": { "text": "“Shipped faster than expected.” — Liam C." } },
+        "b6": { "type": "item", "settings": { "text": "Stadium-Grade Fabric" } },
+        "b7": { "type": "item", "settings": { "text": "“Got compliments all match day.” — Sofia M." } },
+        "b8": { "type": "item", "settings": { "text": "Free Worldwide Shipping" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8"]
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "features": {
+      "type": "features",
+      "settings": {
+        "eyebrow": "Why fans choose Novora",
+        "headline": "Match-day quality. Fair prices."
+      },
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "stat": "32", "title": "Nations", "description": "Every World Cup nation in home and away kits — find your colors, or collect a few rivals." } },
+        "f2": { "type": "feature", "settings": { "stat": "AAA+", "title": "Stadium-Grade Fabric", "description": "Heavyweight, true-color knit with crisp heat-pressed badges that hold up wash after wash." } },
+        "f3": { "type": "feature", "settings": { "stat": "4-Way", "title": "Breathable Stretch", "description": "Moisture-wicking, quick-dry mesh that moves with you — on the pitch or in the stands." } },
+        "f4": { "type": "feature", "settings": { "stat": "Name+#", "title": "Fully Customizable", "description": "Add any name and number in official match fonts. Make it yours, or gift it to a die-hard fan." } },
+        "f5": { "type": "feature", "settings": { "stat": "48h", "title": "Fast Dispatch", "description": "Orders leave our warehouse within 48 hours with tracked, free worldwide shipping." } },
+        "f6": { "type": "feature", "settings": { "stat": "True", "title": "True-To-Size Fit", "description": "Tailored to standard sizing with a detailed size guide, so it fits right the first time." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
+    },
+    "product": {
+      "type": "product",
+      "settings": {
+        "file_1": "jersey-1.jpg",
+        "file_2": "jersey-2.jpg",
+        "file_3": "jersey-3.jpg",
+        "file_4": "jersey-4.jpg",
+        "cap_1": "Stadium-grade heavyweight knit",
+        "cap_2": "Crisp heat-pressed badges",
+        "cap_3": "Breathable quick-dry mesh",
+        "cap_4": "Add your name & number free"
+      },
+      "blocks": {
+        "a1": { "type": "accordion", "settings": { "title": "Sizing & fit", "content": "True to size with a standard athletic cut. S (chest 36\"), M (40\"), L (44\"), XL (48\"), XXL (52\"). Between sizes? Size up for a relaxed fan fit." } },
+        "a2": { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "Free tracked worldwide shipping. Orders dispatch within 48 hours; delivery typically 7–12 business days depending on your country." } },
+        "a3": { "type": "accordion", "settings": { "title": "Material & care", "content": "100% breathable quick-dry polyester knit with heat-pressed crests. Machine wash cold, inside out, and hang dry to keep colors vivid." } },
+        "a4": { "type": "accordion", "settings": { "title": "Returns", "content": "Not the right fit? Return within 30 days for a free exchange or full refund. Personalized jerseys are final sale." } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"]
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {
+        "eyebrow": "How it works",
+        "headline": "Your kit in three steps."
+      },
+      "blocks": {
+        "s1": { "type": "step", "settings": { "number": "01", "title": "Pick your nation", "description": "Choose from all 32 World Cup nations in home or away colors, then select your size from the guide." } },
+        "s2": { "type": "step", "settings": { "number": "02", "title": "Personalize it", "description": "Add any name and number in official match fonts — make it your hero's, or your own." } },
+        "s3": { "type": "step", "settings": { "number": "03", "title": "Wear it proud", "description": "We dispatch in 48 hours with free tracked shipping. Suit up and represent on match day." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "eyebrow": "Loved by 12,000+ fans",
+        "headline": "Fans love their kits."
+      },
+      "blocks": {
+        "r1": { "type": "review", "settings": { "text": "Honestly looks identical to the kit I saw in the official store, at a third of the price. Stitching and badge are spot on.", "name": "Diego R.", "city": "Buenos Aires, AR" } },
+        "r2": { "type": "review", "settings": { "text": "Got my name and number added and it came out perfect. Wore it to the bar for the match and three people asked where I got it.", "name": "Liam C.", "city": "Manchester, UK" } },
+        "r3": { "type": "review", "settings": { "text": "Fabric is thick and breathable, not the thin knockoff stuff. True to size — ordered a medium and it fits great.", "name": "Amara O.", "city": "Lagos, NG" } },
+        "r4": { "type": "review", "settings": { "text": "Bought jerseys for my whole 5-a-side team. Shipping was quick and every single one was flawless. Will reorder.", "name": "Mateo S.", "city": "Madrid, ES" } },
+        "r5": { "type": "review", "settings": { "text": "Gifted one to my dad for the World Cup and he hasn't taken it off. Quality genuinely surprised both of us.", "name": "Sofia M.", "city": "Toronto, CA" } },
+        "r6": { "type": "review", "settings": { "text": "Was nervous ordering from a new store but the tracking was clear and it arrived in 9 days. Kit is gorgeous.", "name": "Kenji T.", "city": "Osaka, JP" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "eyebrow": "FAQ",
+        "headline": "Everything you need to know",
+        "email": "support@novora.com"
+      },
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "Are these official licensed jerseys?", "answer": "Novora jerseys are premium fan-edition replicas — same look, colors and crests as match kits at a fraction of the price. They're not sold as licensed merchandise." } },
+        "q2": { "type": "faq", "settings": { "question": "How do I find my size?", "answer": "Our jerseys are true to size with a standard athletic cut: S fits a 36\" chest, M 40\", L 44\", XL 48\", XXL 52\". If you're between sizes or prefer a looser fit, size up." } },
+        "q3": { "type": "faq", "settings": { "question": "Can I add my own name and number?", "answer": "Yes — free of charge. Add any name and number in official match fonts on the product page before checkout. Personalized jerseys are final sale." } },
+        "q4": { "type": "faq", "settings": { "question": "How long does shipping take?", "answer": "We dispatch within 48 hours with free tracked worldwide shipping. Most orders arrive in 7–12 business days depending on your country." } },
+        "q5": { "type": "faq", "settings": { "question": "Which nations can I order?", "answer": "All 32 World Cup nations in both home and away kits. Popular nations like Argentina, Brazil, France and Portugal are always in stock." } },
+        "q6": { "type": "faq", "settings": { "question": "What if it doesn't fit?", "answer": "Non-personalized jerseys can be returned within 30 days for a free size exchange or a full refund — no hassle." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+    },
+    "final-cta": {
+      "type": "final-cta",
+      "settings": {
+        "eyebrow": "Wear the world's game",
+        "headline": "Represent your",
+        "headline_accent": "nation.",
+        "subtext": "Join 12,000+ fans repping their colors. Stadium-grade World Cup jerseys, fully customizable, now up to 50% off.",
+        "cta": "Shop Jerseys — $34.99",
+        "urgency": "⚡ World Cup drop selling fast · Free worldwide shipping · Ships in 48hrs",
+        "paths_bg": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "logo_text": "NOVORA",
+        "tagline": "Wear the world's game."
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "hero",
+    "ticker",
+    "trust-bar",
+    "features",
+    "product",
+    "how-it-works",
+    "reviews",
+    "faq",
+    "final-cta",
+    "footer"
+  ]
+}

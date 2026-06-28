@@ -59,8 +59,8 @@ window.__novoraDefaultVariant={{ product.first_available_variant.id | default: p
       </div>
 
       <div class="product__price">
-        <span class="product__price-now">$34.99</span>
-        <span class="product__price-was">$69.99</span>
+        <span class="product__price-now">$24.99</span>
+        <span class="product__price-was">$49.99</span>
         <span class="product__save">SAVE 50%</span>
       </div>
 
@@ -100,6 +100,14 @@ window.__novoraDefaultVariant={{ product.first_available_variant.id | default: p
       <form id="product-form" action="/cart/add" method="post">
         <input type="hidden" name="id" id="selected-variant-id" value="{{ product.first_available_variant.id | default: product.variants.first.id }}">
         <input type="hidden" name="quantity" value="1">
+        <div class="product__custom">
+          <p class="product__label" style="margin-bottom:10px">Personalization <span style="font-weight:400;color:#888">(optional — free)</span></p>
+          <div class="product__custom-fields">
+            <input type="text" name="properties[Name]" placeholder="Name on jersey (e.g. MESSI)" maxlength="20" class="product__custom-input">
+            <input type="text" name="properties[Number]" placeholder="Number (e.g. 10)" maxlength="3" class="product__custom-input">
+          </div>
+          <p class="product__custom-note">Leave blank for no personalization. Personalized jerseys are final sale.</p>
+        </div>
         <div class="product__buttons">
           <button type="submit" class="btn btn--dark btn--block btn--lg" data-add-to-cart>Add to Cart</button>
           <a href="/cart" class="btn btn--outline btn--block btn--lg">View Cart</a>
@@ -109,7 +117,7 @@ window.__novoraDefaultVariant={{ product.first_available_variant.id | default: p
       <div class="product__trust">
         <span class="product__trust-item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          Free Worldwide Shipping
+          Worldwide Shipping
         </span>
         <span class="product__trust-item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
@@ -124,7 +132,7 @@ window.__novoraDefaultVariant={{ product.first_available_variant.id | default: p
       <div class="attach">
         <div class="attach__head">
           <span class="attach__title">Most-wanted nations</span>
-          <span class="attach__note">All 32 available</span>
+          <span class="attach__note">All 16 + custom available</span>
         </div>
         <div class="attach__grid attach__grid--nations">
           <div class="attach__item"><span class="nation-dot" style="background:linear-gradient(180deg,#74ACDF 50%,#fff 50%)"></span><span class="attach__lbl">Argentina</span></div>

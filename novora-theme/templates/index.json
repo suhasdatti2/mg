@@ -3,7 +3,7 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
-        "text": "Free worldwide shipping on all orders · 2026 World Cup jerseys from $34.99",
+        "text": "2026 World Cup jerseys from $24.99 · 16 nations + custom available",
         "link_text": "Shop now",
         "link": "#product"
       }
@@ -21,7 +21,7 @@
         "eyebrow": "2026 World Cup Collection",
         "headline": "Official fan jerseys",
         "headline_accent": "for every nation.",
-        "subheadline": "Stadium-grade replica kits for all 32 World Cup nations. True to size, fully personalizable, with free tracked shipping worldwide.",
+        "subheadline": "Stadium-grade replica kits for 16 World Cup nations. True to size, fully personalizable, with worldwide shipping.",
         "cta_primary": "Shop Jerseys",
         "cta_secondary": "How it works",
         "image_file": "jersey-1.jpg"
@@ -31,13 +31,13 @@
       "type": "ticker",
       "blocks": {
         "b1": { "type": "item", "settings": { "text": "“Fits perfectly, looks legit.” — Diego R." } },
-        "b2": { "type": "item", "settings": { "text": "All 32 Nations" } },
+        "b2": { "type": "item", "settings": { "text": "16 Nations Available" } },
         "b3": { "type": "item", "settings": { "text": "“Quality shocked me for the price.” — Amara O." } },
         "b4": { "type": "item", "settings": { "text": "Free Name & Number" } },
         "b5": { "type": "item", "settings": { "text": "“Shipped faster than expected.” — Liam C." } },
         "b6": { "type": "item", "settings": { "text": "Stadium-Grade Fabric" } },
         "b7": { "type": "item", "settings": { "text": "“Got compliments all match day.” — Sofia M." } },
-        "b8": { "type": "item", "settings": { "text": "Free Worldwide Shipping" } }
+        "b8": { "type": "item", "settings": { "text": "Custom Jerseys Available" } }
       },
       "block_order": ["b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8"]
     },
@@ -52,11 +52,11 @@
         "headline": "Stadium-grade kits, fan-grade prices."
       },
       "blocks": {
-        "f1": { "type": "feature", "settings": { "stat": "32", "title": "Nations", "description": "Every World Cup nation in home and away kits. Find your colors, or collect a few rivals." } },
+        "f1": { "type": "feature", "settings": { "stat": "16", "title": "Nations", "description": "16 of the biggest World Cup nations available in home and away kits. Find your colors, or collect a few rivals." } },
         "f2": { "type": "feature", "settings": { "stat": "AAA", "title": "Grade Fabric", "description": "Heavyweight, true-color knit with crisp heat-pressed badges that hold up wash after wash." } },
         "f3": { "type": "feature", "settings": { "stat": "4-way", "title": "Stretch", "description": "Moisture-wicking, quick-dry mesh that moves with you, on the pitch or in the stands." } },
         "f4": { "type": "feature", "settings": { "stat": "Free", "title": "Name & Number", "description": "Add any name and number in official match fonts at no extra cost. Personalize it or gift it." } },
-        "f5": { "type": "feature", "settings": { "stat": "48h", "title": "Dispatch Time", "description": "Orders leave our warehouse within 48 hours with free tracked worldwide shipping." } },
+        "f5": { "type": "feature", "settings": { "stat": "7–14", "title": "Day Delivery", "description": "Orders are processed and shipped worldwide. Delivery typically 7–14 business days depending on your country." } },
         "f6": { "type": "feature", "settings": { "stat": "S–XXL", "title": "5 Sizes", "description": "Standard athletic cut with a detailed size guide, so it fits right the first time." } }
       },
       "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
@@ -99,9 +99,9 @@
       },
       "blocks": {
         "a1": { "type": "accordion", "settings": { "title": "Sizing & fit", "content": "True to size with a standard athletic cut. S (chest 36\"), M (40\"), L (44\"), XL (48\"), XXL (52\"). Between sizes? Size up for a relaxed fit." } },
-        "a2": { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "Free tracked worldwide shipping. Orders dispatch within 48 hours; delivery is typically 7–12 business days depending on your country." } },
+        "a2": { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "We ship worldwide. Delivery is typically 7–14 business days depending on your country. You will receive a tracking number once your order ships." } },
         "a3": { "type": "accordion", "settings": { "title": "Material & care", "content": "100% quick-dry polyester knit with heat-pressed crests. Machine wash cold, inside out, and hang dry to keep colors vivid." } },
-        "a4": { "type": "accordion", "settings": { "title": "Returns", "content": "Non-personalized jerseys can be returned within 30 days for a free size exchange or full refund. Personalized jerseys are final sale." } }
+        "a4": { "type": "accordion", "settings": { "title": "Returns", "content": "Non-personalized jerseys can be returned within 30 days for a size exchange or full refund. Personalized jerseys are final sale." } }
       },
       "block_order": ["a1", "a2", "a3", "a4"]
     },
@@ -112,9 +112,9 @@
         "headline": "Three steps to your kit."
       },
       "blocks": {
-        "s1": { "type": "step", "settings": { "number": "01", "title": "Choose your nation", "description": "Browse all 32 World Cup nations in home or away colors. Select your size using the included size guide." } },
+        "s1": { "type": "step", "settings": { "number": "01", "title": "Choose your nation", "description": "Browse 16 of the biggest World Cup nations in home or away colors. Select your size using the included size guide." } },
         "s2": { "type": "step", "settings": { "number": "02", "title": "Add your details", "description": "Enter any name and number in official match fonts at no extra cost. Skip this step to keep it blank." } },
-        "s3": { "type": "step", "settings": { "number": "03", "title": "We ship it free", "description": "Your order dispatches within 48 hours with free tracked worldwide shipping. Delivery in 7–12 business days." } }
+        "s3": { "type": "step", "settings": { "number": "03", "title": "We ship it to you", "description": "Your order is processed and shipped worldwide. Delivery typically 7–14 business days." } }
       },
       "block_order": ["s1", "s2", "s3"]
     },
@@ -139,27 +139,28 @@
       "settings": {
         "eyebrow": "FAQ",
         "headline": "Common questions",
-        "email": "support@novora.com"
+        "email": "customerservice.n0vora@gmail.com",
+        "phone": "425 381 9372"
       },
       "blocks": {
         "q1": { "type": "faq", "settings": { "question": "Are these official licensed jerseys?", "answer": "Novora jerseys are premium fan-edition replicas with the same look, colors, and crests as match kits, at a fraction of the retail price. They are not sold as licensed merchandise." } },
         "q2": { "type": "faq", "settings": { "question": "How do I find my size?", "answer": "Our jerseys run true to size with a standard athletic cut. S fits a 36\" chest, M a 40\", L a 44\", XL a 48\", XXL a 52\". If you are between sizes or prefer a looser fit, size up." } },
-        "q3": { "type": "faq", "settings": { "question": "Can I add my own name and number?", "answer": "Yes, and it is free. Enter your name and number in official match fonts on the product page before checkout. Please note that personalized jerseys are final sale." } },
-        "q4": { "type": "faq", "settings": { "question": "How long does shipping take?", "answer": "We dispatch within 48 hours with free tracked worldwide shipping. Most orders arrive in 7–12 business days depending on your location." } },
-        "q5": { "type": "faq", "settings": { "question": "Which nations are available?", "answer": "All 32 World Cup nations in both home and away kits. Popular nations like Argentina, Brazil, France, and Portugal are always in stock." } },
-        "q6": { "type": "faq", "settings": { "question": "What if it does not fit?", "answer": "Non-personalized jerseys can be returned within 30 days for a free size exchange or a full refund, no questions asked." } }
+        "q3": { "type": "faq", "settings": { "question": "Can I add my own name and number?", "answer": "Yes, and it is free. Enter your name and number in the personalization fields on the product page before adding to cart. Please note that personalized jerseys are final sale." } },
+        "q4": { "type": "faq", "settings": { "question": "How long does shipping take?", "answer": "We ship worldwide and delivery is typically 7–14 business days depending on your location. You will receive a tracking number once your order ships." } },
+        "q5": { "type": "faq", "settings": { "question": "Which nations are available?", "answer": "We currently carry 16 nations: Argentina, France, Portugal, Brazil, England, Spain, Germany, Uruguay, Netherlands, Mexico, USA, Japan, Morocco, Colombia, Croatia, and Senegal." } },
+        "q6": { "type": "faq", "settings": { "question": "What if it does not fit?", "answer": "Non-personalized jerseys can be returned within 30 days for a size exchange or a full refund, no questions asked." } }
       },
       "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
     },
     "final-cta": {
       "type": "final-cta",
       "settings": {
-        "eyebrow": "Free worldwide shipping",
-        "headline": "All 32 nations,",
+        "eyebrow": "Worldwide shipping",
+        "headline": "16 nations,",
         "headline_accent": "one store.",
-        "subtext": "Stadium-grade World Cup jerseys for every fan. Choose your nation, add your name and number, and we ship it free anywhere in the world.",
+        "subtext": "Stadium-grade World Cup jerseys for every fan. Choose your nation, add your name and number, and we ship it to you anywhere in the world.",
         "cta": "Shop Jerseys",
-        "urgency": "Ships within 48 hours · Free tracked worldwide shipping · 30-day returns"
+        "urgency": "Worldwide shipping · 30-day returns · Custom personalization free"
       }
     },
     "footer": {

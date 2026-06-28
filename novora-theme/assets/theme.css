@@ -456,6 +456,17 @@ h1, h2, h3, h4 {
   .attach__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: 34px; }
 }
+/* --- Custom jersey personalization fields --- */
+.product__custom { margin-bottom: 20px; }
+.product__custom-fields { display: flex; gap: 10px; margin-top: 8px; }
+.product__custom-input {
+  flex: 1; padding: 10px 14px; border: 1.5px solid #D1D5DB; border-radius: 8px;
+  font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s;
+}
+.product__custom-input:focus { border-color: #111; }
+.product__custom-input:first-child { flex: 2; }
+.product__custom-note { font-size: 12px; color: #888; margin-top: 6px; }
+
 @media (max-width: 540px) {
   :root { --page-pad: 20px; }
   .hero__stats { flex-wrap: wrap; }

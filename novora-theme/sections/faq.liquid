@@ -3,7 +3,7 @@
     <div class="faq__intro reveal">
       <p class="eyebrow eyebrow--accent">{{ section.settings.eyebrow }}</p>
       <h2 class="faq__title">{{ section.settings.headline }}</h2>
-      <p class="faq__contact">Still curious? Email us at <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>
+      <p class="faq__contact">Still curious? Email us at <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>{%- if section.settings.phone != blank %} or call us at <a href="tel:{{ section.settings.phone }}">{{ section.settings.phone }}</a>{%- endif %}</p>
     </div>
     <div class="faq__items reveal">
       <div class="accordion" data-accordion>
@@ -29,7 +29,8 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQ" },
     { "type": "text", "id": "headline", "label": "Headline", "default": "Everything you need to know" },
-    { "type": "text", "id": "email", "label": "Contact email", "default": "support@novora.com" }
+    { "type": "text", "id": "email", "label": "Contact email", "default": "customerservice.n0vora@gmail.com" },
+    { "type": "text", "id": "phone", "label": "Phone number", "default": "425 381 9372" }
   ],
   "blocks": [
     {

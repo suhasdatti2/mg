@@ -140,25 +140,25 @@
     var caption = document.getElementById('ProdCaption');
     var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-thumb]'));
 
+    function activateThumb(thumb) {
+      if (!thumb) return;
+      var src = thumb.dataset.img;
+      if (src && main && main.tagName === 'IMG') {
+        main.style.opacity = '0';
+        setTimeout(function () { main.src = src; main.style.opacity = '1'; }, 120);
+      }
+      if (caption && thumb.dataset.cap) caption.textContent = thumb.dataset.cap;
+      thumbs.forEach(function (t) { t.classList.remove('is-active'); });
+      thumb.classList.add('is-active');
+    }
+
     thumbs.forEach(function (thumb) {
       if (thumb.dataset.bound) return;
       thumb.dataset.bound = '1';
-      thumb.addEventListener('click', function () {
-        var src = thumb.dataset.img;
-        if (src && main && main.tagName === 'IMG') {
-          main.style.opacity = '0';
-          setTimeout(function () {
-            main.src = src;
-            main.style.opacity = '1';
-          }, 120);
-        }
-        if (caption && thumb.dataset.cap) caption.textContent = thumb.dataset.cap;
-        thumbs.forEach(function (t) { t.classList.remove('is-active'); });
-        thumb.classList.add('is-active');
-      });
+      thumb.addEventListener('click', function () { activateThumb(thumb); });
     });
 
-    /* Each [data-swatches] group (Nation, Size, …) updates its own label. */
+    /* Each [data-swatches] group updates its label + syncs the gallery image. */
     var groups = Array.prototype.slice.call(root.querySelectorAll('[data-swatches]'));
     groups.forEach(function (group) {
       if (group.dataset.bound) return;
@@ -175,6 +175,9 @@
           opt.classList.add('is-active');
           opt.setAttribute('aria-checked', 'true');
           if (label && opt.dataset.swatch) label.textContent = opt.dataset.swatch;
+          if (opt.dataset.thumbTarget !== undefined) {
+            activateThumb(thumbs[parseInt(opt.dataset.thumbTarget, 10)]);
+          }
         });
       });
     });

@@ -19,9 +19,9 @@
           <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 5 7 9 3"/></svg>
         </button>
         <div class="product__thumbs" data-thumbs-strip>
-          {%- assign caps = section.settings.cap_1 | append: '|' | append: section.settings.cap_2 | append: '|' | append: section.settings.cap_3 | append: '|' | append: section.settings.cap_4 | append: '|' | append: section.settings.cap_5 | append: '|' | append: section.settings.cap_6 | split: '|' -%}
-          {%- assign files = section.settings.file_1 | append: '|' | append: section.settings.file_2 | append: '|' | append: section.settings.file_3 | append: '|' | append: section.settings.file_4 | append: '|' | append: section.settings.file_5 | append: '|' | append: section.settings.file_6 | split: '|' -%}
-          {%- for n in (1..6) -%}
+          {%- assign caps = section.settings.cap_1 | append: '|' | append: section.settings.cap_2 | append: '|' | append: section.settings.cap_3 | append: '|' | append: section.settings.cap_4 | append: '|' | append: section.settings.cap_5 | append: '|' | append: section.settings.cap_6 | append: '|' | append: section.settings.cap_7 | append: '|' | append: section.settings.cap_8 | append: '|' | append: section.settings.cap_9 | append: '|' | append: section.settings.cap_10 | append: '|' | append: section.settings.cap_11 | append: '|' | append: section.settings.cap_12 | append: '|' | append: section.settings.cap_13 | append: '|' | append: section.settings.cap_14 | append: '|' | append: section.settings.cap_15 | append: '|' | append: section.settings.cap_16 | split: '|' -%}
+          {%- assign files = section.settings.file_1 | append: '|' | append: section.settings.file_2 | append: '|' | append: section.settings.file_3 | append: '|' | append: section.settings.file_4 | append: '|' | append: section.settings.file_5 | append: '|' | append: section.settings.file_6 | append: '|' | append: section.settings.file_7 | append: '|' | append: section.settings.file_8 | append: '|' | append: section.settings.file_9 | append: '|' | append: section.settings.file_10 | append: '|' | append: section.settings.file_11 | append: '|' | append: section.settings.file_12 | append: '|' | append: section.settings.file_13 | append: '|' | append: section.settings.file_14 | append: '|' | append: section.settings.file_15 | append: '|' | append: section.settings.file_16 | split: '|' -%}
+          {%- for n in (1..16) -%}
             {%- assign key = 'image_' | append: n -%}
             {%- assign img = section.settings[key] -%}
             {%- assign cap = caps[forloop.index0] -%}
@@ -64,8 +64,18 @@
           <button class="swatch"           data-swatch="France"    data-thumb-target="1" style="background:#1A2A6C"                                     aria-checked="false" aria-label="France"></button>
           <button class="swatch"           data-swatch="Portugal"  data-thumb-target="2" style="background:#C8102E"                                     aria-checked="false" aria-label="Portugal"></button>
           <button class="swatch"           data-swatch="Brazil"    data-thumb-target="3" style="background:#FEDD00"                                     aria-checked="false" aria-label="Brazil"></button>
-          <button class="swatch"           data-swatch="England"   data-thumb-target="4" style="background:#fff;border-color:#bbb"                                            aria-checked="false" aria-label="England"></button>
-          <button class="swatch"           data-swatch="Spain"     data-thumb-target="5" style="background:linear-gradient(180deg,#C60B1E 50%,#FFC400 50%)"                   aria-checked="false" aria-label="Spain"></button>
+          <button class="swatch"           data-swatch="England"    data-thumb-target="4"  style="background:#fff;border-color:#bbb"                                             aria-checked="false" aria-label="England"></button>
+          <button class="swatch"           data-swatch="Spain"      data-thumb-target="5"  style="background:linear-gradient(180deg,#C60B1E 50%,#FFC400 50%)"                  aria-checked="false" aria-label="Spain"></button>
+          <button class="swatch"           data-swatch="Germany"    data-thumb-target="6"  style="background:linear-gradient(180deg,#000 33%,#D00 33%,#D00 67%,#FFCE00 67%)"  aria-checked="false" aria-label="Germany"></button>
+          <button class="swatch"           data-swatch="Italy"      data-thumb-target="7"  style="background:#003DA5"                                                           aria-checked="false" aria-label="Italy"></button>
+          <button class="swatch"           data-swatch="Netherlands" data-thumb-target="8" style="background:#FF6300"                                                           aria-checked="false" aria-label="Netherlands"></button>
+          <button class="swatch"           data-swatch="Mexico"     data-thumb-target="9"  style="background:#006847"                                                           aria-checked="false" aria-label="Mexico"></button>
+          <button class="swatch"           data-swatch="USA"        data-thumb-target="10" style="background:linear-gradient(180deg,#002868 50%,#BF0A30 50%)"                  aria-checked="false" aria-label="USA"></button>
+          <button class="swatch"           data-swatch="Japan"      data-thumb-target="11" style="background:#0C1C8C"                                                           aria-checked="false" aria-label="Japan"></button>
+          <button class="swatch"           data-swatch="Morocco"    data-thumb-target="12" style="background:#C1272D"                                                           aria-checked="false" aria-label="Morocco"></button>
+          <button class="swatch"           data-swatch="Colombia"   data-thumb-target="13" style="background:#FCD116"                                                           aria-checked="false" aria-label="Colombia"></button>
+          <button class="swatch"           data-swatch="Croatia"    data-thumb-target="14" style="background:linear-gradient(90deg,#C8102E 50%,#fff 50%)"                      aria-checked="false" aria-label="Croatia"></button>
+          <button class="swatch"           data-swatch="Senegal"    data-thumb-target="15" style="background:#00853F"                                                           aria-checked="false" aria-label="Senegal"></button>
         </div>
       </div>
 
@@ -112,6 +122,16 @@
           <div class="attach__item"><span class="nation-dot" style="background:#C8102E"></span><span class="attach__lbl">Portugal</span></div>
           <div class="attach__item"><span class="nation-dot" style="background:#fff;border:1px solid #ccc"></span><span class="attach__lbl">England</span></div>
           <div class="attach__item"><span class="nation-dot" style="background:linear-gradient(180deg,#C60B1E 50%,#FFC400 50%)"></span><span class="attach__lbl">Spain</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:linear-gradient(180deg,#000 33%,#D00 33%,#D00 67%,#FFCE00 67%)"></span><span class="attach__lbl">Germany</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#003DA5"></span><span class="attach__lbl">Italy</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#FF6300"></span><span class="attach__lbl">Netherlands</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#006847"></span><span class="attach__lbl">Mexico</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:linear-gradient(180deg,#002868 50%,#BF0A30 50%)"></span><span class="attach__lbl">USA</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#0C1C8C"></span><span class="attach__lbl">Japan</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#C1272D"></span><span class="attach__lbl">Morocco</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#FCD116"></span><span class="attach__lbl">Colombia</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:linear-gradient(90deg,#C8102E 50%,#fff 50%)"></span><span class="attach__lbl">Croatia</span></div>
+          <div class="attach__item"><span class="nation-dot" style="background:#00853F"></span><span class="attach__lbl">Senegal</span></div>
         </div>
       </div>
 
@@ -142,22 +162,52 @@
     { "type": "text", "id": "file_2", "label": "File 2 — France", "default": "jersey-2.jpg" },
     { "type": "text", "id": "file_3", "label": "File 3 — Portugal", "default": "jersey-3.jpg" },
     { "type": "text", "id": "file_4", "label": "File 4 — Brazil", "default": "jersey-4.jpg" },
-    { "type": "text", "id": "file_5", "label": "File 5 — England", "default": "jersey-5.jpg" },
-    { "type": "text", "id": "file_6", "label": "File 6 — Spain", "default": "jersey-6.jpg" },
+    { "type": "text", "id": "file_5",  "label": "File 5 — England",     "default": "jersey-5.jpg" },
+    { "type": "text", "id": "file_6",  "label": "File 6 — Spain",       "default": "jersey-6.jpg" },
+    { "type": "text", "id": "file_7",  "label": "File 7 — Germany",     "default": "jersey-7.jpg" },
+    { "type": "text", "id": "file_8",  "label": "File 8 — Italy",       "default": "jersey-8.jpg" },
+    { "type": "text", "id": "file_9",  "label": "File 9 — Netherlands", "default": "jersey-9.jpg" },
+    { "type": "text", "id": "file_10", "label": "File 10 — Mexico",     "default": "jersey-10.jpg" },
+    { "type": "text", "id": "file_11", "label": "File 11 — USA",        "default": "jersey-11.jpg" },
+    { "type": "text", "id": "file_12", "label": "File 12 — Japan",      "default": "jersey-12.jpg" },
+    { "type": "text", "id": "file_13", "label": "File 13 — Morocco",    "default": "jersey-13.jpg" },
+    { "type": "text", "id": "file_14", "label": "File 14 — Colombia",   "default": "jersey-14.jpg" },
+    { "type": "text", "id": "file_15", "label": "File 15 — Croatia",    "default": "jersey-15.jpg" },
+    { "type": "text", "id": "file_16", "label": "File 16 — Senegal",    "default": "jersey-16.jpg" },
     { "type": "header", "content": "Gallery photos — image picker (optional override)" },
-    { "type": "image_picker", "id": "image_1", "label": "Image 1 (main)" },
-    { "type": "image_picker", "id": "image_2", "label": "Image 2" },
-    { "type": "image_picker", "id": "image_3", "label": "Image 3" },
-    { "type": "image_picker", "id": "image_4", "label": "Image 4" },
-    { "type": "image_picker", "id": "image_5", "label": "Image 5" },
-    { "type": "image_picker", "id": "image_6", "label": "Image 6" },
+    { "type": "image_picker", "id": "image_1",  "label": "Image 1 (main)" },
+    { "type": "image_picker", "id": "image_2",  "label": "Image 2" },
+    { "type": "image_picker", "id": "image_3",  "label": "Image 3" },
+    { "type": "image_picker", "id": "image_4",  "label": "Image 4" },
+    { "type": "image_picker", "id": "image_5",  "label": "Image 5" },
+    { "type": "image_picker", "id": "image_6",  "label": "Image 6" },
+    { "type": "image_picker", "id": "image_7",  "label": "Image 7" },
+    { "type": "image_picker", "id": "image_8",  "label": "Image 8" },
+    { "type": "image_picker", "id": "image_9",  "label": "Image 9" },
+    { "type": "image_picker", "id": "image_10", "label": "Image 10" },
+    { "type": "image_picker", "id": "image_11", "label": "Image 11" },
+    { "type": "image_picker", "id": "image_12", "label": "Image 12" },
+    { "type": "image_picker", "id": "image_13", "label": "Image 13" },
+    { "type": "image_picker", "id": "image_14", "label": "Image 14" },
+    { "type": "image_picker", "id": "image_15", "label": "Image 15" },
+    { "type": "image_picker", "id": "image_16", "label": "Image 16" },
     { "type": "header", "content": "Slide captions" },
-    { "type": "text", "id": "cap_1", "label": "Caption 1", "default": "Stadium-grade heavyweight knit" },
-    { "type": "text", "id": "cap_2", "label": "Caption 2", "default": "Crisp heat-pressed badges" },
-    { "type": "text", "id": "cap_3", "label": "Caption 3", "default": "Breathable quick-dry mesh" },
-    { "type": "text", "id": "cap_4", "label": "Caption 4", "default": "Add your name & number free" },
-    { "type": "text", "id": "cap_5", "label": "Caption 5", "default": "Classic three lions home kit" },
-    { "type": "text", "id": "cap_6", "label": "Caption 6", "default": "La Roja official colors" }
+    { "type": "text", "id": "cap_1",  "label": "Caption 1",  "default": "Stadium-grade heavyweight knit" },
+    { "type": "text", "id": "cap_2",  "label": "Caption 2",  "default": "Crisp heat-pressed badges" },
+    { "type": "text", "id": "cap_3",  "label": "Caption 3",  "default": "Breathable quick-dry mesh" },
+    { "type": "text", "id": "cap_4",  "label": "Caption 4",  "default": "Add your name & number free" },
+    { "type": "text", "id": "cap_5",  "label": "Caption 5",  "default": "Classic three lions home kit" },
+    { "type": "text", "id": "cap_6",  "label": "Caption 6",  "default": "La Roja official colors" },
+    { "type": "text", "id": "cap_7",  "label": "Caption 7",  "default": "Die Mannschaft home kit" },
+    { "type": "text", "id": "cap_8",  "label": "Caption 8",  "default": "Gli Azzurri classic blue" },
+    { "type": "text", "id": "cap_9",  "label": "Caption 9",  "default": "Oranje away edition" },
+    { "type": "text", "id": "cap_10", "label": "Caption 10", "default": "El Tri home colors" },
+    { "type": "text", "id": "cap_11", "label": "Caption 11", "default": "Stars & Stripes home kit" },
+    { "type": "text", "id": "cap_12", "label": "Caption 12", "default": "Samurai Blue home kit" },
+    { "type": "text", "id": "cap_13", "label": "Caption 13", "default": "Atlas Lions home kit" },
+    { "type": "text", "id": "cap_14", "label": "Caption 14", "default": "Los Cafeteros home kit" },
+    { "type": "text", "id": "cap_15", "label": "Caption 15", "default": "Vatreni checkerboard kit" },
+    { "type": "text", "id": "cap_16", "label": "Caption 16", "default": "Lions of Teranga home kit" }
   ],
   "blocks": [
     {

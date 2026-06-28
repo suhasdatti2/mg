@@ -56,7 +56,7 @@
         "f2": { "type": "feature", "settings": { "stat": "AAA", "title": "Grade Fabric", "description": "Heavyweight, true-color knit with crisp heat-pressed badges that hold up wash after wash." } },
         "f3": { "type": "feature", "settings": { "stat": "4-way", "title": "Stretch", "description": "Moisture-wicking, quick-dry mesh that moves with you, on the pitch or in the stands." } },
         "f4": { "type": "feature", "settings": { "stat": "Free", "title": "Name & Number", "description": "Add any name and number in official match fonts at no extra cost. Personalize it or gift it." } },
-        "f5": { "type": "feature", "settings": { "stat": "7–14", "title": "Day Delivery", "description": "Orders are processed and shipped worldwide. Delivery typically 7–14 business days depending on your country." } },
+        "f5": { "type": "feature", "settings": { "stat": "7–14", "title": "Day Delivery", "description": "Orders are processed and shipped worldwide. Delivery typically 7–14 days, often sooner depending on your country." } },
         "f6": { "type": "feature", "settings": { "stat": "S–XXL", "title": "5 Sizes", "description": "Standard athletic cut with a detailed size guide, so it fits right the first time." } }
       },
       "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
@@ -99,7 +99,7 @@
       },
       "blocks": {
         "a1": { "type": "accordion", "settings": { "title": "Sizing & fit", "content": "True to size with a standard athletic cut. S (chest 36\"), M (40\"), L (44\"), XL (48\"), XXL (52\"). Between sizes? Size up for a relaxed fit." } },
-        "a2": { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "We ship worldwide. Delivery is typically 7–14 business days depending on your country. You will receive a tracking number once your order ships." } },
+        "a2": { "type": "accordion", "settings": { "title": "Shipping & delivery", "content": "We ship worldwide. Delivery is typically 7–14 days, often sooner depending on your country. You will receive a tracking number once your order ships." } },
         "a3": { "type": "accordion", "settings": { "title": "Material & care", "content": "100% quick-dry polyester knit with heat-pressed crests. Machine wash cold, inside out, and hang dry to keep colors vivid." } },
         "a4": { "type": "accordion", "settings": { "title": "Returns", "content": "Non-personalized jerseys can be returned within 30 days for a size exchange or full refund. Personalized jerseys are final sale." } }
       },
@@ -114,7 +114,7 @@
       "blocks": {
         "s1": { "type": "step", "settings": { "number": "01", "title": "Choose your nation", "description": "Browse 16 of the biggest World Cup nations in home or away colors. Select your size using the included size guide." } },
         "s2": { "type": "step", "settings": { "number": "02", "title": "Add your details", "description": "Enter any name and number in official match fonts at no extra cost. Skip this step to keep it blank." } },
-        "s3": { "type": "step", "settings": { "number": "03", "title": "We ship it to you", "description": "Your order is processed and shipped worldwide. Delivery typically 7–14 business days." } }
+        "s3": { "type": "step", "settings": { "number": "03", "title": "We ship it to you", "description": "Your order is processed and shipped worldwide. Delivery typically 7–14 days, often sooner." } }
       },
       "block_order": ["s1", "s2", "s3"]
     },
@@ -146,7 +146,7 @@
         "q1": { "type": "faq", "settings": { "question": "Are these official licensed jerseys?", "answer": "Novora jerseys are premium fan-edition replicas with the same look, colors, and crests as match kits, at a fraction of the retail price. They are not sold as licensed merchandise." } },
         "q2": { "type": "faq", "settings": { "question": "How do I find my size?", "answer": "Our jerseys run true to size with a standard athletic cut. S fits a 36\" chest, M a 40\", L a 44\", XL a 48\", XXL a 52\". If you are between sizes or prefer a looser fit, size up." } },
         "q3": { "type": "faq", "settings": { "question": "Can I add my own name and number?", "answer": "Yes, and it is free. Enter your name and number in the personalization fields on the product page before adding to cart. Please note that personalized jerseys are final sale." } },
-        "q4": { "type": "faq", "settings": { "question": "How long does shipping take?", "answer": "We ship worldwide and delivery is typically 7–14 business days depending on your location. You will receive a tracking number once your order ships." } },
+        "q4": { "type": "faq", "settings": { "question": "How long does shipping take?", "answer": "We ship worldwide and delivery is typically 7–14 days, often sooner depending on your location. You will receive a tracking number once your order ships." } },
         "q5": { "type": "faq", "settings": { "question": "Which nations are available?", "answer": "We currently carry 16 nations: Argentina, France, Portugal, Brazil, England, Spain, Germany, Uruguay, Netherlands, Mexico, USA, Japan, Morocco, Colombia, Croatia, and Senegal." } },
         "q6": { "type": "faq", "settings": { "question": "What if it does not fit?", "answer": "Non-personalized jerseys can be returned within 30 days for a size exchange or a full refund, no questions asked." } }
       },

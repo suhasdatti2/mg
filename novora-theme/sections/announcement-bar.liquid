@@ -1,7 +1,7 @@
 <div class="announcement">
   {{ section.settings.text }}
   {%- if section.settings.link_text != blank -%}
-    <a href="{{ section.settings.link | default: '#product' }}">{{ section.settings.link_text }}</a>
+    <a href="{{ section.settings.link | default: '/#product' }}">{{ section.settings.link_text }}</a>
   {%- endif -%}
 </div>
 
@@ -13,13 +13,13 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "World Cup Drop is Live — Up to 50% Off | Free Worldwide Shipping |"
+      "default": "2026 World Cup jerseys from $24.99 · 16 nations + custom available"
     },
     {
       "type": "text",
       "id": "link_text",
       "label": "Link text",
-      "default": "Shop Jerseys →"
+      "default": "Shop now"
     },
     {
       "type": "url",

@@ -1,0 +1,15 @@
+<div class="page-shell">
+  <div class="wrap">
+    <h1 class="page__title">Collections</h1>
+    <div class="product-grid">
+      {%- for collection in collections -%}
+        <a href="{{ collection.url }}" class="product-card">
+          {%- if collection.featured_image -%}
+            <img src="{{ collection.featured_image | image_url: width: 500 }}" alt="{{ collection.title | escape }}">
+          {%- endif -%}
+          <p class="product-card__title">{{ collection.title }}</p>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

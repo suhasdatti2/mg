@@ -1,0 +1,56 @@
+<div class="page-shell">
+  <div class="wrap cart">
+    <h1 class="page__title">Your Cart</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="cart__empty">
+        <p>Your cart is currently empty.</p>
+        <a href="/#product" class="btn btn--dark btn--lg">Shop Jerseys</a>
+      </div>
+    {%- else -%}
+      <form action="/cart" method="post" novalidate class="cart__form">
+        <div class="cart__items">
+          {%- for item in cart.items -%}
+            <div class="cart-item">
+              <a href="{{ item.url }}" class="cart-item__media">
+                {%- if item.image -%}
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" width="92" height="92">
+                {%- endif -%}
+              </a>
+              <div class="cart-item__info">
+                <p class="cart-item__name">{{ item.product.title }}</p>
+                {%- unless item.variant.title contains 'Default' -%}
+                  <p class="cart-item__variant">{{ item.variant.title }}</p>
+                {%- endunless -%}
+                {%- for property in item.properties -%}
+                  {%- if property.last != blank -%}
+                    <p class="cart-item__prop">{{ property.first }}: {{ property.last }}</p>
+                  {%- endif -%}
+                {%- endfor -%}
+                <a href="{{ item.url_to_remove }}" class="cart-item__remove">Remove</a>
+              </div>
+              <div class="cart-item__qty">
+                <label class="visually-hidden" for="updates_{{ item.key }}">Quantity</label>
+                <input type="number" id="updates_{{ item.key }}" name="updates[]" value="{{ item.quantity }}" min="0" inputmode="numeric">
+              </div>
+              <div class="cart-item__price">{{ item.final_line_price | money }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="cart__footer">
+          <p class="cart__note">Taxes and shipping calculated at checkout.</p>
+          <div class="cart__summary">
+            <div class="cart__subtotal">
+              <span>Subtotal</span>
+              <span>{{ cart.total_price | money }}</span>
+            </div>
+            <button type="submit" name="update" class="btn btn--outline btn--block">Update Cart</button>
+            <button type="submit" name="checkout" class="btn btn--dark btn--block btn--lg">Checkout</button>
+            <a href="/#product" class="cart__continue">&larr; Continue shopping</a>
+          </div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</div>

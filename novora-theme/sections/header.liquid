@@ -3,14 +3,18 @@
     <a href="/" class="header__logo">{{ section.settings.logo_text }}</a>
 
     <nav class="header__nav" aria-label="Primary">
-      <a href="#features">Why Novora</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+      <a href="/#features">Why Novora</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#faq">FAQ</a>
     </nav>
 
     <div class="header__actions">
-      <a href="#product" class="btn btn--lime">{{ section.settings.cta_text }}</a>
+      <a href="/cart" class="header__cart" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        {%- if cart.item_count > 0 -%}<span class="header__cart-count">{{ cart.item_count }}</span>{%- endif -%}
+      </a>
+      <a href="/#product" class="btn btn--lime">{{ section.settings.cta_text }}</a>
       <button class="header__burger" data-burger aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -18,11 +22,12 @@
   </div>
 
   <nav class="mobile-nav" data-mobile-nav aria-label="Mobile">
-    <a href="#features">Why Novora</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#product" class="btn btn--lime btn--block">{{ section.settings.cta_text }}</a>
+    <a href="/#features">Why Novora</a>
+    <a href="/#how-it-works">How It Works</a>
+    <a href="/#reviews">Reviews</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/cart">Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</a>
+    <a href="/#product" class="btn btn--lime btn--block">{{ section.settings.cta_text }}</a>
   </nav>
 </header>
 
@@ -31,7 +36,7 @@
   "name": "Header",
   "settings": [
     { "type": "text", "id": "logo_text", "label": "Logo text", "default": "NOVORA" },
-    { "type": "text", "id": "cta_text", "label": "CTA button", "default": "Shop Jerseys — $34.99" }
+    { "type": "text", "id": "cta_text", "label": "CTA button", "default": "Shop Jerseys" }
   ]
 }
 {% endschema %}

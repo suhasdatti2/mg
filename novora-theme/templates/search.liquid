@@ -1,0 +1,32 @@
+<div class="page-shell">
+  <div class="wrap page-narrow">
+    <h1 class="page__title">Search</h1>
+
+    <form action="/search" method="get" class="search-form" role="search">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products…" class="search-form__input" aria-label="Search">
+      <button type="submit" class="btn btn--dark">Search</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results_count == 0 -%}
+        <p class="search__empty">No results found{% if search.terms != blank %} for &ldquo;{{ search.terms | escape }}&rdquo;{% endif %}.</p>
+        <a href="/#product" class="btn btn--outline">Browse jerseys</a>
+      {%- else -%}
+        <p class="search__count">{{ search.results_count }} result{% if search.results_count != 1 %}s{% endif %} for &ldquo;{{ search.terms | escape }}&rdquo;</p>
+        <div class="product-grid">
+          {%- for item in search.results -%}
+            <a href="{{ item.url }}" class="product-card">
+              {%- if item.featured_image -%}
+                <img src="{{ item.featured_image | image_url: width: 500 }}" alt="{{ item.title | escape }}">
+              {%- endif -%}
+              <p class="product-card__title">{{ item.title }}</p>
+              {%- if item.object_type == 'product' -%}
+                <p class="product-card__price">{{ item.price | money }}</p>
+              {%- endif -%}
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>

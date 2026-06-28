@@ -158,6 +158,23 @@
       thumb.addEventListener('click', function () { activateThumb(thumb); });
     });
 
+    /* Thumbnail strip prev/next arrows */
+    var strip = root.querySelector('[data-thumbs-strip]') || document.querySelector('[data-thumbs-strip]');
+    var btnPrev = root.querySelector('[data-thumb-prev]') || document.querySelector('[data-thumb-prev]');
+    var btnNext = root.querySelector('[data-thumb-next]') || document.querySelector('[data-thumb-next]');
+    if (strip && btnPrev && btnNext && !strip.dataset.arrowsBound) {
+      strip.dataset.arrowsBound = '1';
+      function updateArrows() {
+        btnPrev.hidden = strip.scrollLeft <= 4;
+        btnNext.hidden = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 4;
+      }
+      var scrollStep = function () { return strip.clientWidth * 0.75; };
+      btnPrev.addEventListener('click', function () { strip.scrollBy({ left: -scrollStep(), behavior: 'smooth' }); });
+      btnNext.addEventListener('click', function () { strip.scrollBy({ left: scrollStep(), behavior: 'smooth' }); });
+      strip.addEventListener('scroll', updateArrows, { passive: true });
+      updateArrows();
+    }
+
     /* Each [data-swatches] group updates its label + syncs the gallery image. */
     var groups = Array.prototype.slice.call(root.querySelectorAll('[data-swatches]'));
     groups.forEach(function (group) {

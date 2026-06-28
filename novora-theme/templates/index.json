@@ -68,10 +68,14 @@
         "file_2": "jersey-2.jpg",
         "file_3": "jersey-3.jpg",
         "file_4": "jersey-4.jpg",
+        "file_5": "jersey-5.jpg",
+        "file_6": "jersey-6.jpg",
         "cap_1": "Stadium-grade heavyweight knit",
         "cap_2": "Crisp heat-pressed badges",
         "cap_3": "Breathable quick-dry mesh",
-        "cap_4": "Free name and number printing"
+        "cap_4": "Free name and number printing",
+        "cap_5": "Classic three lions home kit",
+        "cap_6": "La Roja official colors"
       },
       "blocks": {
         "a1": { "type": "accordion", "settings": { "title": "Sizing & fit", "content": "True to size with a standard athletic cut. S (chest 36\"), M (40\"), L (44\"), XL (48\"), XXL (52\"). Between sizes? Size up for a relaxed fit." } },

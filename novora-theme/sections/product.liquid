@@ -1,3 +1,10 @@
+{%- assign product = all_products['novora-world-cup-jersey'] -%}
+{%- if product -%}
+<script>
+window.__novoraVariants=(function(){var m={};{%- for v in product.variants -%}m["{{ v.option1 }}/{{ v.option2 }}"]={% if v.available %}{{ v.id }}{% else %}0{% endif %};{%- endfor -%}return m;})();
+window.__novoraDefaultVariant={{ product.first_available_variant.id | default: product.variants.first.id }};
+</script>
+{%- endif -%}
 <section class="section product" id="product">
   <div class="wrap product__grid">
     <!-- Media gallery -->
@@ -90,10 +97,14 @@
         </div>
       </div>
 
-      <div class="product__buttons">
-        <button class="btn btn--dark btn--block btn--lg" data-add-to-cart>Add to Cart</button>
-        <a href="/checkout" class="btn btn--outline btn--block btn--lg">Buy Now</a>
-      </div>
+      <form id="product-form" action="/cart/add" method="post">
+        <input type="hidden" name="id" id="selected-variant-id" value="{{ product.first_available_variant.id | default: product.variants.first.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <div class="product__buttons">
+          <button type="submit" class="btn btn--dark btn--block btn--lg" data-add-to-cart>Add to Cart</button>
+          <a href="/cart" class="btn btn--outline btn--block btn--lg">View Cart</a>
+        </div>
+      </form>
 
       <div class="product__trust">
         <span class="product__trust-item">

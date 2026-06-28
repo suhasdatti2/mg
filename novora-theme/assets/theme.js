@@ -195,32 +195,56 @@
           if (opt.dataset.thumbTarget !== undefined) {
             activateThumb(thumbs[parseInt(opt.dataset.thumbTarget, 10)]);
           }
+          updateVariant();
         });
       });
     });
+
+    function updateVariant() {
+      var input = document.getElementById('selected-variant-id');
+      if (!input || !window.__novoraVariants) return;
+      var nationEl = document.querySelector('[data-swatches][aria-label="Nation"] [data-swatch].is-active');
+      var sizeEl = document.querySelector('[data-swatches][aria-label="Size"] [data-swatch].is-active');
+      if (!nationEl || !sizeEl) return;
+      var key = nationEl.dataset.swatch + '/' + sizeEl.dataset.swatch;
+      var id = window.__novoraVariants[key];
+      if (id) input.value = id;
+    }
+    updateVariant();
   }
 
-  /* --- Add to cart: "✓ Added!" green flash for 2 seconds --------------- */
+  /* --- Add to cart: AJAX submit with "✓ Added!" feedback --------------- */
   function addToCart(root) {
-    var btns = (root || document).querySelectorAll('[data-add-to-cart]');
-    btns.forEach(function (btn) {
-      if (btn.dataset.bound) return;
-      btn.dataset.bound = '1';
-      btn.addEventListener('click', function () {
-        if (btn.dataset.busy === '1') return;
-        btn.dataset.busy = '1';
-        var original = btn.innerHTML;
-        var bg = btn.style.background;
-        var color = btn.style.color;
+    var form = (root || document).getElementById('product-form');
+    if (!form || form.dataset.bound) return;
+    form.dataset.bound = '1';
+    var btn = form.querySelector('[data-add-to-cart]');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var variantId = document.getElementById('selected-variant-id').value;
+      if (!variantId || !btn || btn.dataset.busy === '1') return;
+      btn.dataset.busy = '1';
+      var original = btn.innerHTML;
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: 1 })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function () {
         btn.innerHTML = '✓ Added!';
         btn.style.background = '#16A34A';
         btn.style.color = '#FFFFFF';
         setTimeout(function () {
           btn.innerHTML = original;
-          btn.style.background = bg;
-          btn.style.color = color;
+          btn.style.background = '';
+          btn.style.color = '';
           btn.dataset.busy = '0';
         }, 2000);
+      })
+      .catch(function () {
+        window.location.href = '/cart/add?id=' + variantId + '&quantity=1&return_to=/cart';
       });
     });
   }
